@@ -16,7 +16,7 @@ export default function Header() {
 
   useEffect(() => {
     dispatch(fetchCategories());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="relative">
