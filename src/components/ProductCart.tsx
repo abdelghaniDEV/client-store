@@ -19,9 +19,21 @@ export default function ProductCart({ product }: productCartProps) {
   const [openCart, setOpenCart] = useState<boolean>(false);
   const [loading, setLoading] = useState(true);
 
-  const handleMouseOver = (boolean: boolean) => {
+  // const handleMouseOver = (boolean: boolean) => {
+  //   if (window.matchMedia("(hover: hover)").matches) {
+  //     setIsHovered(boolean);
+  //   }
+  // };
+
+  const handleTouchStart = () => {
+    // منع الـ hover في الموبايل
+    setIsHovered(false);
+  };
+
+  const handleMouseOver = () => {
+    // تفعيل الـ hover في الأجهزة التي تدعم الـ hover (مثل الحواسب)
     if (window.matchMedia("(hover: hover)").matches) {
-      setIsHovered(boolean);
+      setIsHovered(true);
     }
   };
 
@@ -29,8 +41,9 @@ export default function ProductCart({ product }: productCartProps) {
     <div className="">
       <div
         className="relative overflow-hidden "
-        onMouseOver={() => handleMouseOver(true)}
-        onMouseOut={() => handleMouseOver(false)}
+        onMouseOver={handleMouseOver}
+        onMouseOut={() => setIsHovered(false)}
+        onTouchStart={handleTouchStart}
       >
         <div className="relative w-full h-[200px] md:h-[306px] ">
           {" "}
@@ -53,7 +66,7 @@ export default function ProductCart({ product }: productCartProps) {
         </div>
         <AnimatePresence>
           {isHovered && (
-            <>
+            <div className="">
               <ProductCartIcons product={product} setOpenCart={setOpenCart} />
               <motion.div
                 initial={{ opacity: 0 }}
@@ -66,7 +79,7 @@ export default function ProductCart({ product }: productCartProps) {
                   ADD TO CART
                 </Button>
               </motion.div>
-            </>
+            </div>
           )}
         </AnimatePresence>
       </div>
