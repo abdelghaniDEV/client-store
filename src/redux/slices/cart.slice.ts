@@ -1,5 +1,5 @@
 // src/redux/cartSlice.ts
-import { loadFromLocalStorage, saveToLocalStorage } from "@/utils/localStorage";
+import { saveToLocalStorage } from "@/utils/localStorage";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface CartItem {
@@ -35,7 +35,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem(state, action: PayloadAction<CartItem>) {
-      const { id, name, price, quantity = 1 } = action.payload; // Default quantity to 1 if not provided
+      const { id } = action.payload; // Default quantity to 1 if not provided
       console.log(action.payload);
 
       const itemIndex = state.items.findIndex((item) => item.id === id);

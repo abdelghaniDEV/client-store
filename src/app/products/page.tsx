@@ -33,7 +33,7 @@ export default function Products() {
     router.push(
       `?page=${page}&search=${search}&stock=${stock}&category=${category}&size=${size}`
     );
-  }, [page, search, category, stock, size]);
+  }, [page, search, category, stock, size , router]);
 
   useEffect(() => {
     const FetchData = async () => {
@@ -61,7 +61,7 @@ export default function Products() {
       }
     };
     FetchData();
-  }, [page, search, stock, category, priceRange, size]);
+  }, [page, search, stock, category, priceRange, size, setLoading, setProducts, setTotalPages]);
 
   return (
     <div>

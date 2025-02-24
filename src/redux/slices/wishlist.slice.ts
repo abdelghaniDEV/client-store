@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // import { Product } from "@/types/product";
-import { saveToLocalStorage, loadFromLocalStorage } from "@/utils/localStorage";
+import { saveToLocalStorage } from "@/utils/localStorage";
 import { Product } from "@/types";
 
 // export interface Product {
