@@ -35,9 +35,10 @@ export interface CartItem {
 export interface reviewsItem {
   _id: string;
   fullName: string;
+  email: string;
   rating: number;
   comment: string;
   image?: string;
   productId: string;
-  createdAt: Date;
+  created_at: Date;
 }

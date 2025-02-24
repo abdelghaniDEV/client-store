@@ -2,8 +2,12 @@
 import { reviewsItem } from "@/types";
 import React from "react";
 
+type reviewCart = {
+  review: reviewsItem;
+}
 
-export default function ReviewCart({review} : reviewsItem) {
+
+export default function ReviewCart({review} : reviewCart) {
   return (
     <div className="border-b-[1px] py-5" >
       <div className="flex items-center gap-3">
