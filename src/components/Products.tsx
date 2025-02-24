@@ -86,10 +86,10 @@ export default function Products() {
               <h1 className="text-[35px] font-[600] lg:text-[55px] ">
                 {category}
               </h1>
-              <div className="flex gap-2 items-center  text-[15px] lg:text-[17px]">
+              <div className="flex gap-1 items-center  text-[17px] lg:text-[17px]">
                 <h2>Products</h2>
                 <ChevronRight />
-                <h2 className="">{category}</h2>
+                <h2 className="font-[500]">{category}</h2>
               </div>
             </div>
             <div className="">
@@ -97,8 +97,8 @@ export default function Products() {
                 <li
                   id="All"
                   onClick={() => setCategory("All")}
-                  className={`text-[17px] lg:text-[20px] cursor-pointer ${
-                    category === "All" ? "border-b-[1.5px] border-black" : ""
+                  className={`text-[18px] lg:text-[20px]  cursor-pointer ${
+                    category === "All" ? "border-b-[1.5px] border-black font-[500]" : ""
                   }`}
                 >
                   All
@@ -113,9 +113,9 @@ export default function Products() {
                       }}
                       key={cate._id}
                       id={cate._id}
-                      className={`text-[17px] lg:text-[20px] cursor-pointer ${
+                      className={`text-[18px] lg:text-[20px]  cursor-pointer ${
                         cate.name === category
-                          ? "border-b-[1.5px] border-black"
+                          ? "border-b-[1.5px] border-black font-[500]"
                           : ""
                       }`}
                     >
