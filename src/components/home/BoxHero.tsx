@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Button } from "../ui/button";
 import { ArrowUpCircle } from "lucide-react";
 import { motion } from "motion/react";
 
 type BoxHeroProps = {
-  image: string;
+  image: string | StaticImageData; 
   title: string;
   buttonText: string;
 };
