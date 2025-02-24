@@ -1,16 +1,17 @@
 // src/redux/cartSlice.ts
+import { CartItem } from "@/types";
 import { saveToLocalStorage } from "@/utils/localStorage";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  size?: string;
-  color?: string;
-  image?: string;
-  quantity: number;
-}
+// interface CartItem {
+//   id: string;
+//   name: string;
+//   price: number;
+//   size?: string;
+//   color?: string;
+//   image?: string;
+//   quantity: number;
+// }
 
 interface CartState {
   items: CartItem[];
