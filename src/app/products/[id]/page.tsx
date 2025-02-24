@@ -34,6 +34,11 @@ export default function ProductDetails() {
   }, [id]);
 
   const checkAvariableStock = () => {
+    // التحقق من وجود stock
+    if (product?.stock === undefined) {
+      return <span className="text-[16px] text-[#9e9e9e] font-[400]">Stock data not available</span>;
+    }
+  
     if (product?.stock === 0) {
       return (
         <span className="text-[16px] text-[#f44336] font-[400]">
@@ -50,6 +55,7 @@ export default function ProductDetails() {
       );
     }
   };
+  
 
   const handelShowSection = () => {
     if (showSection === "description") {
@@ -118,7 +124,7 @@ export default function ProductDetails() {
                 environmental impact.
               </p>
             </div>
-            <ProductVariant product={product} />
+            {product && <ProductVariant product={product} />}
             <ProductConditions />
             <div className="py-5 md:py-3 text-[16px]">
               <h3 className="font-[500] text-[20px]">Product Details :</h3>
@@ -167,7 +173,7 @@ export default function ProductDetails() {
         </div>
         {handelShowSection()}
       </div>
-      <RalatedProducts categories={product?.categories[0]} />
+       {product?.categories[0] && <RalatedProducts categories={product?.categories[0]} />}
     </div>
   );
 }

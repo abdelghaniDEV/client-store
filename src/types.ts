@@ -4,9 +4,9 @@ export interface Product {
   description?: string;
   details?: string;
   price: number;
-  size?: string[];
-  color?: string[];
-  images?: string[];
+  size: string[];
+  color: string[];
+  images: string[];
   ShortDescription?: string;
   stock: number;
   categories: Category[]; // Store category IDs as strings

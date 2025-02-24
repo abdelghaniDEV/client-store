@@ -16,7 +16,10 @@ export default function Products() {
   const [loading, setLoading] = useState(false);
   const searchParams = useSearchParams();
   const limit = "12";
-  const [page, setPage] = useState(searchParams.get("page") || "1");
+  const [page, setPage] = useState<number>(
+    parseInt(searchParams.get("page") || "1")
+  );
+
   const [search, setSearch] = useState(searchParams.get("search") || "");
   const [stock, setStock] = useState(searchParams.get("stock") || "");
   const [category, setCategory] = useState(
@@ -40,7 +43,7 @@ export default function Products() {
       try {
         setLoading(false);
         const response = await getAllProducts(
-          page,
+          page.toString(),
           limit,
           search,
           stock,
@@ -103,7 +106,7 @@ export default function Products() {
                   <li
                     onClick={() => {
                       setCategory(cate.name);
-                      setPage("1");
+                      setPage(1);
                       setSearch("");
                     }}
                     key={cate._id}

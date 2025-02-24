@@ -4,7 +4,11 @@ import React, { useEffect, useState } from "react";
 import ListProducts from "./ListProducts";
 import { Category } from "@/types";
 
-export default function RalatedProducts({ categories }: Category) {
+type categoryPops = {
+  categories : Category
+}
+
+export default function RalatedProducts({ categories } : categoryPops) {
   // const [page, setPage] = useState("1");
   // const [limit, setLimit] = useState("8");
   const [products, setProducts] = useState([]);

@@ -1,6 +1,10 @@
 import React from "react";
 
-export default function ProductDescription({ description }: string) {
+type descriptionProps = {
+  description: string | undefined;
+}
+
+export default function ProductDescription({ description }: descriptionProps) {
   return (
     <>
       {description && (

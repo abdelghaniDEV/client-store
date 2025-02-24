@@ -19,8 +19,12 @@ import {
 } from "@/redux/slices/wishlist.slice";
 import { Product } from "@/types";
 
+type ProductVariantProps = {
+  product: Product ;
+};
 
-export default function ProductVariant({ product }: Product) {
+
+export default function ProductVariant({ product }: ProductVariantProps) {
   const [selectColor, setSelectColor] = useState<string>();
   const [counter, setCounter] = useState<number>(1);
   const [selectSize, setSelectSize] = useState<string>();

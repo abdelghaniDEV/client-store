@@ -12,7 +12,7 @@ export default function WishListInitializer() {
 
   useEffect(() => {
     const wishlistData = loadFromLocalStorage("wishlistStore01");
-    console.log(wishlistData);
+    console.log("wishlist",wishlistData);
     if (wishlistData) {
       wishlistData.items.forEach((item: Product) => dispatch(addToWishlist(item)));
     }
