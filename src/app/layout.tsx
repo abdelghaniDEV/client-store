@@ -29,12 +29,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" >
       <body
         className={` antialiased `}
+        
       >
         <Toaster />
-        <ReduxProvider>
+        <ReduxProvider >
           <Header />
           {children}
           <Footer />
