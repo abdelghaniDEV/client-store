@@ -22,7 +22,7 @@ import { Product } from "@/types";
 
 type ProductDialogProps = {
   product: Product;
-  setOpenCart: React.Dispatch<React.SetStateAction<number>>;
+  setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export default function ProductDialog({ product, setOpenCart }: ProductDialogProps) {

@@ -10,7 +10,11 @@ import { Button } from "./ui/button";
 import ProductCartIcons from "./ProductCartIcons";
 import { Product } from "@/types";
 
-export default function ProductCart({ product }: Product) {
+type productCartProps = {
+  product: Product;
+}
+
+export default function ProductCart({ product }: productCartProps) {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [openCart, setOpenCart] = useState<boolean>(false);
   const [loading, setLoading] = useState(true);

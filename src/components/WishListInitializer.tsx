@@ -6,13 +6,17 @@ import { loadFromLocalStorage } from "../utils/localStorage";
 import { addToWishlist } from "@/redux/slices/wishlist.slice";
 import { Product } from "@/types";
 
+interface WishlistData {
+  items: Product[];
+}
+
 export default function WishListInitializer() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const wishlistData = loadFromLocalStorage("wishlistStore01");
-    console.log("wishlist",wishlistData);
+    const wishlistData : WishlistData | null = loadFromLocalStorage("wishlistStore01");
+   
     if (wishlistData) {
       wishlistData.items.forEach((item: Product) => dispatch(addToWishlist(item)));
     }
