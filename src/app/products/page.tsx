@@ -15,7 +15,7 @@ export default function Products() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const searchParams = useSearchParams();
-  const [limit , setLimit] = useState('12')
+  const limit = "12";
   const [page, setPage] = useState(searchParams.get("page") || "1");
   const [search, setSearch] = useState(searchParams.get("search") || "");
   const [stock, setStock] = useState(searchParams.get("stock") || "");
@@ -33,7 +33,7 @@ export default function Products() {
     router.push(
       `?page=${page}&search=${search}&stock=${stock}&category=${category}&size=${size}`
     );
-  }, [page, search, category, stock, size , router]);
+  }, [page, search, category, stock, size, router]);
 
   useEffect(() => {
     const FetchData = async () => {
@@ -61,7 +61,17 @@ export default function Products() {
       }
     };
     FetchData();
-  }, [page, search, stock, category, priceRange, size, setLoading, setProducts, setTotalPages]);
+  }, [
+    page,
+    search,
+    stock,
+    category,
+    priceRange,
+    size,
+    setLoading,
+    setProducts,
+    setTotalPages,
+  ]);
 
   return (
     <div>

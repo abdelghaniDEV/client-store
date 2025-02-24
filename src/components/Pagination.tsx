@@ -9,7 +9,7 @@ const Pagination = ({
 }: {
   totalPages: number;
   currentPage: number;
-  setPage: React.Dispatch<React.SetStateAction<number>>;
+  setPage: React.Dispatch<React.SetStateAction<number | string>>;
   page: number;
 }) => {
 
