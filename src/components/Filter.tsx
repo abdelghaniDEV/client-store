@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import PriceRangeFilter from "./PriceRangeFilter";
 import { Button } from "./ui/button";
+import { Category } from "@/types";
 
 type filterProps = {
   stock: string;
@@ -31,11 +32,10 @@ export default function Filter({
 }: filterProps) {
   const [openFilter, setOpenFilter] = useState(false);
   const categories = useSelector((state: RootState) => state.categories);
-  const [price, setPrice] = useState(50);
 
   const sizes = ["S", "M", "L", "Xl", "2XL", 38, 39, 40, 41, 42];
 
-  const handleStockChange = (e: any) => {
+  const handleStockChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target;
     if (checked) {
       setStock(value);
@@ -163,7 +163,7 @@ export default function Filter({
               <div className="py-3 border-b-[1px]">
                 <h3 className="font-[500] text-[18px]">Category</h3>
                 <div className="flex flex-col gap-2 pt-[16px] pl-2">
-                  {categories.map((cate: any) => {
+                  {categories.map((cate: Category) => {
                     return (
                       <div
                         key={cate._id}

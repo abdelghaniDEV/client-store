@@ -1,18 +1,16 @@
 "use client";
 import React, { useState } from "react";
-import image from "../assets/hero01 (1).webp";
-import { Eye, Heart, ShoppingCart } from "lucide-react";
+import { Heart } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { Dialog } from "@/components/ui/dialog";
 import Image from "next/image";
 import ProductCartDetails from "./ProductCartDetails";
 import ProductDialog from "./ProductDialog";
-import loading from "../assets/loading.svg";
 import { Button } from "./ui/button";
 import ProductCartIcons from "./ProductCartIcons";
-import Link from "next/link";
+import { Product } from "@/types";
 
-export default function ProductCart({ product }: any) {
+export default function ProductCart({ product }: Product) {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [openCart, setOpenCart] = useState<boolean>(false);
   const [loading, setLoading] = useState(true);

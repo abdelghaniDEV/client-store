@@ -1,8 +1,8 @@
 "use client"
-import ListProducts from "@/components/ListProducts";
 import ProductCart from "@/components/ProductCart";
 import { RootState } from "@/redux/store";
-import { ChevronRight, ListPlusIcon } from "lucide-react";
+import { Product } from "@/types";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -27,7 +27,7 @@ export default function Wishlist() {
         </div>
       </div>
        <div className="container grid grid-cols-2 pb-8 md:grid-cols-4 gap-2 md:gap-[20px]">
-         {wishlist.items.map((wishlistItem : any) => (
+         {wishlist.items.map((wishlistItem : Product) => (
              <ProductCart key={wishlistItem._id} product={wishlistItem} />
          ))}
        </div>

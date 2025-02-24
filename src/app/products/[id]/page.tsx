@@ -6,18 +6,18 @@ import ProductImages from "@/components/ProductImages";
 import ProductReview from "@/components/ProductReview";
 import ProductVariant from "@/components/ProductVariant ";
 import RalatedProducts from "@/components/RalatedProducts";
+import { Category, Product } from "@/types";
+
 import { Box, ChevronRight, Home } from "lucide-react";
 import { motion } from "motion/react";
-
-import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-export default function page() {
+export default function ProductDetails() {
   const params = useParams();
   const id = params.id as string;
-  const [product, setProduct] = useState<any>();
+  const [product, setProduct] = useState<Product>();
   const [showSection, setShowSection] = useState<string>("description");
 
   useEffect(() => {
@@ -133,7 +133,7 @@ export default function page() {
               </h4>
               <h4 className=" font-[500]">
                 Categories :{" "}
-                {product?.categories.map((cate: any) => {
+                {product?.categories.map((cate: Category) => {
                   return (
                     <span className="text-main-text font-[400]" key={cate._id}>
                       {cate.name},

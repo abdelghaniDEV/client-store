@@ -1,4 +1,4 @@
-import { Trash, X } from "lucide-react";
+import { Trash } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import {
@@ -13,17 +13,17 @@ import {
   incrementItem,
   removeItem,
 } from "@/redux/slices/cart.slice";
-import { ScrollArea } from "./ui/scroll-area";
+import { CartItem } from "@/types";
 
 type listCartProps = {
-  cart: any[];
+  cart: CartItem[];
 };
 
 export default function ListCart({ cart }: listCartProps) {
   const dispatch = useDispatch<AppDispatch>();
   return (
     <div className="flex flex-col gap-3 py-4 h-auto min-h-[90%]">
-      {cart.map((item: any) => (
+      {cart.map((item: CartItem) => (
         <div
           key={item.id}
           className="flex gap-3 items-start border-b-[1px] pb-4 relative"

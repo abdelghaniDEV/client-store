@@ -1,11 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { Eye, Heart, Minus, Plus, ShoppingCart } from "lucide-react";
+import { Eye, Heart, Minus, Plus } from "lucide-react";
 import { Button } from "./ui/button";
-import image from "../assets/hero01 (1).webp";
 import Image from "next/image";
 import {
-  Dialog,
+  
   DialogContent,
   DialogHeader,
   DialogTitle,
@@ -19,8 +18,14 @@ import {
   removeFromWishlist,
 } from "@/redux/slices/wishlist.slice";
 import Link from "next/link";
+import { Product } from "@/types";
 
-export default function ProductDialog({ product, setOpenCart }: any) {
+type ProductDialogProps = {
+  product: Product;
+  setOpenCart: React.Dispatch<React.SetStateAction<number>>;
+};
+
+export default function ProductDialog({ product, setOpenCart }: ProductDialogProps) {
   const [counter, setCounter] = useState<number>(1);
   const [loading, setLoading] = useState(false);
   const [selectSize, setSelectSize] = useState<string>();
@@ -37,8 +42,6 @@ export default function ProductDialog({ product, setOpenCart }: any) {
   const dispatch = useDispatch<AppDispatch>();
 
   const { toast } = useToast();
-
-  const cart = useSelector((state: RootState) => state.cart);
   // handle state counter changes
   const handleIncrement = () => {
     setCounter(counter + 1);

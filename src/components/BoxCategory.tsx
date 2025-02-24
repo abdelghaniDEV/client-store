@@ -6,11 +6,11 @@ import Promotion from "../assets/promotion-cls.jpg";
 import Link from "next/link";
 
 type boxCategory = {
-  image: any;
+  image: string;
   name: string;
 };
 
-export default function ({ image, name }: boxCategory) {
+export default function BoxCategory ({ image, name }: boxCategory) {
   return (
     <Link
       href={`/products?category=${name}`}

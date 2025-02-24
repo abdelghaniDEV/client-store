@@ -2,10 +2,10 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { Skeleton } from "./ui/skeleton";
+import { Product } from "@/types";
 
-export default function ProductImages({ product }: any) {
+export default function ProductImages({ product }: Product) {
   const [selectImage, setSelectImage] = useState<string>("");
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setSelectImage(product?.images[0]);

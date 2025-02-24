@@ -7,7 +7,7 @@ type notificationProps = {
     timeout? : number,
 }
 
-export default function Notification({ message , type , timeout = 3000} : notificationProps) {
+export default function Notification() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {

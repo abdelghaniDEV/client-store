@@ -3,13 +3,12 @@ import imgHero from "../assets/hero01 (1).webp";
 import imgHero2 from "../assets/hero01 (2).webp";
 import BoxHero from "@/components/home/BoxHero";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Truck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import NewProducts from "@/components/home/NewProducts";
 import Features from "@/components/home/Features";
 import TitleHome from "@/components/ui/TitleHome";
-import CategoriesSection from "@/components/home/CategoriesSection";
-import Hero from "@/components/home/Hero";
+import CategoriesSection from "@/components/home/CategoriesSection";;
 
 export default function Home() {
   return (
@@ -83,8 +82,8 @@ export default function Home() {
               Best Leather Bag for Professionals
             </h2>
             <p className="text-[20px] md:text-[30px] text-center md:leading-[35px]">
-              "Stylish, durable, and functional—your perfect professional
-              companion in premium leather."
+              Stylish, durable, and functional—your perfect professional
+              companion in premium leather.
             </p>
             <Button className="text-[20px] border-[2px] rounded-none border-black">
               Shop Now

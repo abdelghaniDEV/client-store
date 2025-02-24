@@ -12,12 +12,11 @@ type priceRangeSlider = {
 export default function PriceRangeFilter({
   min = 0,
   max = 1000,
-  priceRange,
   setPriceRange,
 }: priceRangeSlider) {
   const [priceRangefilter, setPriceRangefilter] = useState([min, max]);
 
-  const handleChange = (value: any) => {
+  const handleChange = (value: number[]) => {
     setPriceRangefilter(value);
     console.log(priceRangefilter);
   };

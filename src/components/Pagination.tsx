@@ -1,7 +1,5 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
 const Pagination = ({
   totalPages,
@@ -11,7 +9,7 @@ const Pagination = ({
 }: {
   totalPages: number;
   currentPage: number;
-  setPage: any;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
   page: number;
 }) => {
 

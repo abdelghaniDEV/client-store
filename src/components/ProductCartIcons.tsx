@@ -9,10 +9,11 @@ import {
   removeFromWishlist,
 } from "@/redux/slices/wishlist.slice";
 import { useToast } from "@/hooks/use-toast";
+import { Product } from "@/types";
 
 type ProductCartIconProps = {
   setOpenCart: (isOpen: boolean) => void;
-  product: any;
+  product: Product;
 };
 
 export default function ProductCartIcons({

@@ -1,13 +1,13 @@
 "use client";
 import {
-  CornerDownLeft,
+
   CornerLeftDown,
-  Eye,
+
   Heart,
   Minus,
   Plus,
 } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button } from "./ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,7 +17,7 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "@/redux/slices/wishlist.slice";
-import { error } from "console";
+
 
 export default function ProductVariant({ product }: any) {
   const [selectColor, setSelectColor] = useState<string>();

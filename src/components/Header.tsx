@@ -1,5 +1,5 @@
 "use client";
-import { AlignJustify, Heart, ShoppingBag } from "lucide-react";
+import { AlignJustify, Heart } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import { useDispatch, useSelector } from "react-redux";

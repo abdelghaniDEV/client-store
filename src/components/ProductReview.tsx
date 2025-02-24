@@ -5,7 +5,7 @@ import {
   MessageCircleCode,
   MessageSquare,
   Star,
-  User,
+ 
   User2,
 } from "lucide-react";
 import React, { useEffect, useState } from "react";

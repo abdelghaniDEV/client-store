@@ -1,8 +1,6 @@
 "use client";
 import { getAllProducts } from "@/actions/actions";
-import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import ProductCart from "./ProductCart";
 import ListProducts from "./ListProducts";
 
 export default function RalatedProducts({ categories }: any) {

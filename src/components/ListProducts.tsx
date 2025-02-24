@@ -1,10 +1,10 @@
 import React from "react";
 import ProductCart from "./ProductCart";
 import { Skeleton } from "./ui/skeleton";
-import Link from "next/link";
+import { Product } from "@/types";
 
 type listProductsProps = {
-  products: any[];
+  products: Product[];
   loading: boolean;
   limit: number;
 };
@@ -32,7 +32,7 @@ export default function ListProducts({
     <div className="container grid grid-cols-2 pb-8 md:grid-cols-4 gap-2 md:gap-[20px] ">
       {loading ? (
         <>
-          {products.map((product: any) => (
+          {products.map((product: Product) => (
             <ProductCart key={product._id} product={product} />
           ))}{" "}
         </>

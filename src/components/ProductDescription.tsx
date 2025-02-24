@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ProductDescription({ description }: any) {
+export default function ProductDescription({ description }: string) {
   return (
     <>
       {description && (

@@ -1,14 +1,12 @@
 import React from "react";
-import logo from "../assets/promotion-cls.jpg";
 import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
-import Image from "next/image";
 
 export default function Footer() {
   return (
     <div className="bg bg-main-primary w-full  text-black  p-10">
       <div className="grid md:grid-cols-4 gap-[20px] md:gap-[70px] pb-10">
         <div>
-          {/* <Image src={logo} alt="logo" className="w-[150px]" /> */}
+          
           <h2 className="text-[50px] leading-[50px]   mb-1 font-[500]">
              BagStore
           </h2>

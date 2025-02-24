@@ -5,12 +5,13 @@ import Filter from "@/components/Filter";
 import ListProducts from "@/components/ListProducts";
 import Pagination from "@/components/Pagination";
 import { RootState } from "@/redux/store";
+import { Category } from "@/types";
 import { ChevronRight } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
-export default function page() {
+export default function Products() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const searchParams = useSearchParams();
@@ -88,7 +89,7 @@ export default function page() {
               >
                 All
               </li>
-              {categories.map((cate: any) => {
+              {categories.map((cate: Category) => {
                 return (
                   <li
                     onClick={() => {
