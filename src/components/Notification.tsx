@@ -1,11 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-type notificationProps = {
-    message : string,
-    type : "success" | "error" | "warning",
-    timeout? : number,
-}
+
 
 export default function Notification() {
   const [visible, setVisible] = useState(true);

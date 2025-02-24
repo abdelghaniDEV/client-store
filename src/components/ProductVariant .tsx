@@ -17,12 +17,12 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "@/redux/slices/wishlist.slice";
+import { Product } from "@/types";
 
 
-export default function ProductVariant({ product }: any) {
+export default function ProductVariant({ product }: Product) {
   const [selectColor, setSelectColor] = useState<string>();
   const [counter, setCounter] = useState<number>(1);
-  const [loading, setLoading] = useState(false);
   const [selectSize, setSelectSize] = useState<string>();
   const [errors, setErrors] = useState({
     size: "",

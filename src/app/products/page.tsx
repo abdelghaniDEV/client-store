@@ -15,14 +15,13 @@ export default function Products() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const searchParams = useSearchParams();
+  const [limit , setLimit] = useState('12')
   const [page, setPage] = useState(searchParams.get("page") || "1");
   const [search, setSearch] = useState(searchParams.get("search") || "");
   const [stock, setStock] = useState(searchParams.get("stock") || "");
   const [category, setCategory] = useState(
     searchParams.get("category") || "All"
   );
-  const [limit, setLimit] = useState("12");
-  const [isDelete, setIsDelete] = useState<string>("");
   const [totalPages, setTotalPages] = useState();
   const [priceRange, setPriceRange] = useState<number[]>([1, 1000]);
   const [size, setSize] = useState<string>(searchParams.get("size") || "");
@@ -62,7 +61,7 @@ export default function Products() {
       }
     };
     FetchData();
-  }, [page, limit, isDelete, search, stock, category, priceRange, size]);
+  }, [page, search, stock, category, priceRange, size]);
 
   return (
     <div>

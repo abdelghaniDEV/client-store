@@ -1,7 +1,5 @@
 
-import imgHero from "../../assets/hero01 (1).webp";
-import Image from "next/image";
-import { Button } from "../ui/button";
+
 import NewProdcutCart from "./NewProdcutCart";
 import TitleHome from "../ui/TitleHome";
 

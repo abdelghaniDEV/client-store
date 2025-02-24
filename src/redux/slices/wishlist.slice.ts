@@ -1,22 +1,23 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // import { Product } from "@/types/product";
 import { saveToLocalStorage, loadFromLocalStorage } from "@/utils/localStorage";
+import { Product } from "@/types";
 
-export interface Product {
-  _id?: string; // Optional since MongoDB assigns it automatically
-  name: string;
-  description?: string;
-  details?: string;
-  price: number;
-  size?: string[];
-  color?: string[];
-  images?: string[];
-  ShortDescription?: string;
-  stock?: number;
-  categories: string[]; // Store category IDs as strings
-  ratings?: string[]; // Store rating IDs as strings
-  created_at?: Date;
-}
+// export interface Product {
+//   _id?: string; // Optional since MongoDB assigns it automatically
+//   name: string;
+//   description?: string;
+//   details?: string;
+//   price: number;
+//   size?: string[];
+//   color?: string[];
+//   images?: string[];
+//   ShortDescription?: string;
+//   stock?: number;
+//   categories: string[]; // Store category IDs as strings
+//   ratings?: string[]; // Store rating IDs as strings
+//   created_at?: Date;
+// }
 
 interface WishlistState {
   items: Product[];

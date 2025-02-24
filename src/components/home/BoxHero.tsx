@@ -1,13 +1,12 @@
 "use client";
 import React from "react";
-import imgHero from "../../assets/hero01 (1).webp";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { ArrowUpCircle } from "lucide-react";
 import { motion } from "motion/react";
 
 type BoxHeroProps = {
-  image: any;
+  image: string;
   title: string;
   buttonText: string;
 };

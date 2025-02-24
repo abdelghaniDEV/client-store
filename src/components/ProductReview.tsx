@@ -22,6 +22,7 @@ import { createReview, getProductReviews } from "@/actions/actions";
 import { useParams } from "next/navigation";
 import ReviewCart from "./ReviewCart";
 import { Skeleton } from "./ui/skeleton";
+import { reviewsItem } from "@/types";
 
 type data = {
   fullName: string;
@@ -30,6 +31,19 @@ type data = {
   rating: number;
   product: string;
   image?: File;
+};
+
+type reviews =  {
+  count : number;
+  ratings : reviewsItem[];
+  status: string;
+}
+
+type Errors = {
+  fullName: string;
+  email: string;
+  comment: string;
+  rating: string;
 };
 
 export default function ProductReview() {
@@ -52,15 +66,17 @@ export default function ProductReview() {
   });
 
   const [loadingData, setLoadingData] = useState(false);
-  const [reviews, setReviews] = useState<any>();
+  const [reviews, setReviews] = useState<reviews>();
 
 
   useEffect(() => {
     const fetchReview = async () => {
+
       try {
         setLoadingData(true);
         const reviewsTarget = await getProductReviews(id);
         setReviews(reviewsTarget);
+        console.log("rev",reviewsTarget);
         setLoadingData(false);
         console.log("reviws", reviewsTarget);
       } catch (err) {
@@ -74,7 +90,12 @@ export default function ProductReview() {
   // check data
   const checkData = () => {
     let isValid = true;
-    const errors: any = {};
+    const errors: Errors = {
+      fullName: "",
+      email: "",
+      comment: "",
+      rating: "",
+    };
 
     if (!data.fullName) {
       isValid = false;
@@ -112,7 +133,7 @@ export default function ProductReview() {
     return isValid;
   };
 
-  const submitReview = async (e: any) => {
+  const submitReview = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     
     if (checkData()) {
@@ -152,7 +173,7 @@ export default function ProductReview() {
       <div className="py-4 grid grid-col-1 ">
         {loadingData
           ? listSketelon()
-          : reviews?.ratings.map((review: any) => {
+          : reviews?.ratings.map((review: reviewsItem) => {
               return <ReviewCart review={review} key={review._id} />;
             })}
         {/* {reviews?.ratings.map((review: any) => {

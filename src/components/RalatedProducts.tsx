@@ -2,11 +2,11 @@
 import { getAllProducts } from "@/actions/actions";
 import React, { useEffect, useState } from "react";
 import ListProducts from "./ListProducts";
+import { Category } from "@/types";
 
-export default function RalatedProducts({ categories }: any) {
-  const [page, setPage] = useState("1");
-  const [limit, setLimit] = useState("8");
-  const [showSection, setShowSection] = useState<string>("description");
+export default function RalatedProducts({ categories }: Category) {
+  // const [page, setPage] = useState("1");
+  // const [limit, setLimit] = useState("8");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState<string>("");
@@ -21,8 +21,8 @@ export default function RalatedProducts({ categories }: any) {
         try {
           setLoading(false);
           const response = await getAllProducts(
-            page,
-            limit,
+            "1",
+            "8",
             "",
             "",
             category,
@@ -40,7 +40,7 @@ export default function RalatedProducts({ categories }: any) {
       }
     };
     fetchProducts();
-  }, [page, limit, category]);
+  }, [category]);
 
   return (
     <div>
@@ -68,7 +68,7 @@ export default function RalatedProducts({ categories }: any) {
         {/* Render products here */}
         <ListProducts
           products={products}
-          limit={Number(limit)}
+          limit={8}
           loading={loading}
         />
       </div>

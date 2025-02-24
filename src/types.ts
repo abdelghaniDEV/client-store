@@ -1,18 +1,3 @@
-// export type Product = {
-//   _id: string;
-//   name: string;
-//   description?: string;
-//   details?: string;
-//   price: number;
-//   size?: string[];
-//   color?: string[];
-//   images?: string[];
-//   ShortDescription?: string;
-//   stock: number;
-//   categories: any[];
-//   ratings: [];
-//   created_at: Date;
-// };
 
 export interface Product {
     _id: string; // Optional since MongoDB assigns it automatically
@@ -47,4 +32,14 @@ export interface CartItem {
   color?: string;
   image: string;
   quantity: number;
+}
+
+export interface reviewsItem {
+  _id: string;
+  fullName : string;
+  rating : number;
+  comment : string;
+  image? : string;
+  productId : string;
+  createdAt : Date;
 }

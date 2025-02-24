@@ -1,16 +1,10 @@
 "use client"
 import React from "react";
-import imgHero from "../assets/hero01 (1).webp";
-import imgHero2 from "../assets/hero01 (2).webp";
-import imgHero3 from "../assets/MBG9629400_onmodel.webp";
-import Promotion from "../../assets/promotion-cls.jpg";
 import TitleHome from "../ui/TitleHome";
-import Image from "next/image";
-import { Button } from "../ui/button";
-import { ArrowRight } from "lucide-react";
 import BoxCategory from "../BoxCategory";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
+import { Category } from "@/types";
 
 export default function CategoriesSection() {
   const categories = useSelector((state : RootState) => state.categories)
@@ -75,7 +69,7 @@ export default function CategoriesSection() {
           </div>
         </div> */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 pt-5">
-        {categories.map((category : any, index) => (
+        {categories.map((category : Category) => (
           <BoxCategory key={category._id} image={category.image} name={category.name} />
         ))}
         {/* <BoxCategory image={Promotion} name="Women" />
