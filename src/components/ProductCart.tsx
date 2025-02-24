@@ -12,19 +12,25 @@ import { Product } from "@/types";
 
 type productCartProps = {
   product: Product;
-}
+};
 
 export default function ProductCart({ product }: productCartProps) {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [openCart, setOpenCart] = useState<boolean>(false);
   const [loading, setLoading] = useState(true);
 
+  const handleMouseOver = (boolean: boolean) => {
+    if (window.matchMedia("(hover: hover)").matches) {
+      setIsHovered(boolean);
+    }
+  };
+
   return (
-    <div  className="">
+    <div className="">
       <div
         className="relative overflow-hidden "
-        onMouseOver={() => setIsHovered(true)}
-        onMouseOut={() => setIsHovered(false)}
+        onMouseOver={() => handleMouseOver(true)}
+        onMouseOut={() => handleMouseOver(false)}
       >
         <div className="relative w-full h-[200px] md:h-[306px] ">
           {" "}
@@ -46,43 +52,6 @@ export default function ProductCart({ product }: productCartProps) {
           <span>-20%</span>
         </div>
         <AnimatePresence>
-          {/* {isHovered && (
-            <motion.div
-              className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 "
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.div>
-                <div className="flex gap-2 items-center justify-center">
-                  <ShoppingCart
-                    className="bg-main-primary p-1 h-[36px] w-[36px] rounded-[5px] cursor-pointer transform  duration-300 hover:bg-black hover:text-main-primary hover:border-[1px] hover:border-main-primary"
-                    onClick={() => setOpenCart(true)}
-                  />
-
-                  <Eye
-                    className="bg-main-primary p-1 h-[36px] w-[36px] rounded-[5px] cursor-pointer transform  duration-300 hover:bg-black hover:text-main-primary hover:border-[1px] hover:border-main-primary"
-                    aria-label="View details"
-                  />
-
-                  <Heart
-                    className="bg-main-primary p-1 h-[36px] w-[36px] rounded-[5px] cursor-pointer transform  duration-300 hover:bg-black hover:text-main-primary hover:border-[1px] hover:border-main-primary"
-                    aria-label="Add to favorites"
-                  />
-                </div>
-                <ul className="flex gap-2 items-center justify-center text-[20px]  font-[700] py-3 text-white">
-                  {product.size.map((size: any) => {
-                    return (
-                      <li className="uppercase" key={size}>
-                        {size}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </motion.div>
-            </motion.div>
-          )} */}
           {isHovered && (
             <>
               <ProductCartIcons product={product} setOpenCart={setOpenCart} />
