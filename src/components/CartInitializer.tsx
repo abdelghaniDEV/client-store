@@ -6,13 +6,16 @@ import { loadFromLocalStorage } from "../utils/localStorage";
 import { addItem } from "../redux/slices/cart.slice";
 import { CartItem } from "@/types";
 
+
+
 export default function CartInitializer() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const cartData = loadFromLocalStorage("cartStore01");
-    if (cartData) {
+    const cartData  = loadFromLocalStorage("cartStore01");
+    console.log("cartdata",cartData)
+    if (Array.isArray(cartData)) {
       cartData.forEach((item: CartItem) => dispatch(addItem(item)));
     }
     setIsLoaded(true);
