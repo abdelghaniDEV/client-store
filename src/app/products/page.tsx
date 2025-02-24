@@ -1,7 +1,6 @@
-"use client";
+'use client';
 import { getAllProducts } from "@/actions/actions";
 import Filter from "@/components/Filter";
-// import { getAllProducts } from "@/actions/product.action";
 import ListProducts from "@/components/ListProducts";
 import Pagination from "@/components/Pagination";
 import { RootState } from "@/redux/store";

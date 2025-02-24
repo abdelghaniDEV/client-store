@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { getProductById } from "@/actions/actions";
 import ProductConditions from "@/components/ProductConditions";
 import ProductDescription from "@/components/ProductDescription";
