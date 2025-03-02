@@ -39,7 +39,7 @@ type phoneNumberProps = {
   data: order;
 };
 
-export default function PhoneNumberInput({ data, setData }: phoneNumberProps) {
+export default function PhoneNumberInput({ setData }: phoneNumberProps) {
   const [countries, setCountries] = useState<FormattedCountry[]>([]);
   const [selectedCountry, setSelectedCountry] = useState<string>("+122");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -97,8 +97,8 @@ export default function PhoneNumberInput({ data, setData }: phoneNumberProps) {
       ...prevData,
       phone: selectedCountry + phoneNumber,
     }));
-  }, [phoneNumber, selectedCountry]);
-  
+  }, [phoneNumber, selectedCountry , setData]);
+
 
   return (
     <div className="flex flex-col gap-2">
