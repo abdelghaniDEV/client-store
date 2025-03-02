@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
@@ -88,17 +88,22 @@ export default function PhoneNumberInput({ setData }: phoneNumberProps) {
       setSelectedCountry(country.phoneCode);
     } else {
       console.warn("Country not found for code:", value);
-      
     }
   };
 
-  const handlePhoneChange = useCallback(() => {
+  // const handlePhoneChange = useCallback(() => {
+  //   setData((prevData) => ({
+  //     ...prevData,
+  //     phone: selectedCountry + phoneNumber,
+  //   }));
+  // }, [phoneNumber, selectedCountry , setData]);
+
+  useEffect(() => {
     setData((prevData) => ({
       ...prevData,
       phone: selectedCountry + phoneNumber,
     }));
-  }, [phoneNumber, selectedCountry , setData]);
-
+  }, [phoneNumber, selectedCountry, setData]);
 
   return (
     <div className="flex flex-col gap-2">
