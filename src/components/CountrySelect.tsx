@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/select";
 import { Label } from "./ui/label";
 import { order } from "@/types";
+import Image from "next/image";
 
 type country = {
   name: string;
@@ -37,9 +38,8 @@ type CountrySelectProps = {
   data: order;
 };
 
-export default function CountrySelect({ setData, data }: CountrySelectProps) {
+export default function CountrySelect({ setData }: CountrySelectProps) {
   const [countries, setCountries] = useState([]);
-  const [selectedCountry, setSelectedCountry] = useState("");
 
   useEffect(() => {
     axios
@@ -81,8 +81,10 @@ export default function CountrySelect({ setData, data }: CountrySelectProps) {
             return (
               <SelectItem key={country.code} value={country.name}>
                 <div className="flex items-center gap-2">
-                  <img
+                  <Image
                     className="w-6 h-5 "
+                    width={24}
+                    height={20}
                     src={country.flag}
                     alt={country.name}
                   />

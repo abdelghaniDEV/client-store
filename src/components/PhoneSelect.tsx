@@ -88,8 +88,7 @@ export default function PhoneNumberInput({ data, setData }: phoneNumberProps) {
       setSelectedCountry(country.phoneCode);
     } else {
       console.warn("Country not found for code:", value);
-      // يمكنك هنا التعامل مع الحالة التي لا يتم فيها العثور على الدولة
-      // مثلاً: تعيين قيمة افتراضية أو إظهار رسالة خطأ
+      
     }
   };
 
@@ -99,7 +98,7 @@ export default function PhoneNumberInput({ data, setData }: phoneNumberProps) {
       phone: selectedCountry + phoneNumber,
     }));
     console.log("setData", data.phone);
-  }, [phoneNumber, selectedCountry]);
+  }, [phoneNumber, selectedCountry , setData]);
 
   return (
     <div className="flex flex-col gap-2">
