@@ -7,6 +7,7 @@ import { AppDispatch, RootState } from "@/redux/store";
 import ListCart from "./ListCart";
 import { Button } from "./ui/button";
 import { clearCart } from "@/redux/slices/cart.slice";
+import Link from "next/link";
 
 export default function Cart() {
   const [open, setOpen] = useState(false);
@@ -67,8 +68,8 @@ export default function Cart() {
                 <h4>${cart.totalPrice.toFixed(2)}</h4>
               </div>
               <div className="grid grid-cols-2 items-center gap-4 mt-3">
-                <Button className="bg-main-secondary text-white text-[18px]">
-                  Check Out
+                <Button className="bg-main-secondary text-white text-[18px]" onClick={() => setOpen(false)}>
+                  <Link href={'/checkout'}>Check Out</Link>
                 </Button>
                 <Button className=" text-black border-[1px] border-main-secondary text-[18px]">
                   View Cart

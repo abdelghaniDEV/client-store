@@ -42,3 +42,14 @@ export interface reviewsItem {
   productId: string;
   created_at: Date;
 }
+
+
+export interface order  {
+  fullName : string,
+  email: string,
+  address: string,
+  city: string,
+  zipCode: string,
+  phone: string,
+  country: string,
+}
