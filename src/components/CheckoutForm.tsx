@@ -13,7 +13,6 @@ import { order } from "@/types";
 export default function CheckoutForm() {
   const cart = useSelector((state: RootState) => state.cart);
 
-  // القيم الافتراضية
   const initialState: order = {
     fullName: "",
     email: "",
@@ -25,10 +24,6 @@ export default function CheckoutForm() {
   };
 
   const [data, setData] = useState<order>(initialState);
-
-  useEffect(() => {
-    setData(initialState);
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

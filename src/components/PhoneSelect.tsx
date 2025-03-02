@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
@@ -92,13 +92,13 @@ export default function PhoneNumberInput({ data, setData }: phoneNumberProps) {
     }
   };
 
-  useEffect(() => {
+  const handlePhoneChange = useCallback(() => {
     setData((prevData) => ({
       ...prevData,
       phone: selectedCountry + phoneNumber,
     }));
-    console.log("setData", data.phone);
-  }, [phoneNumber, selectedCountry , setData]);
+  }, [phoneNumber, selectedCountry]);
+  
 
   return (
     <div className="flex flex-col gap-2">

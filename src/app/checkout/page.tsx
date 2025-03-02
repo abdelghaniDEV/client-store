@@ -4,7 +4,7 @@ import CheckoutForm from "@/components/CheckoutForm";
 import ListCart from "@/components/ListCart";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { RootState } from "@/redux/store";
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 
 
