@@ -3,21 +3,18 @@ import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
-    <div className="bg bg-main-primary w-full  text-black  p-10">
-      <div className="grid md:grid-cols-4 gap-[20px] md:gap-[70px] pb-10">
+    <div className="bg bg-main-primary w-full  text-black  ">
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-4  container">
         <div>
-          
-          <h2 className="text-[50px] leading-[50px]   mb-1 font-[500]">
-             BagStore
-          </h2>
-          <p className="w-[300px] pt-5">
-            Our smart digital menu for restaurants is powered by technology that
-            has been used in the hospitality business since 2018
+          <p className="lg:w-[300px] pt-5 uppercase text-[25px] font-[600] leading-[22px]">
+            Get Creative white clothes : <br /> stylish inspiration for every
+            occation .
           </p>
         </div>
-        <div>
-          <h4 className="pb-4 text-[20px] text-">Categories</h4>
-          <ul className="flex flex-col gap-2">
+
+        <div className="">
+          <h4 className="pb-1 text-[20px] font-[500] text-">Categories</h4>
+          <ul className="flex flex-col text-[18px] gap-2">
             <li>Men</li>
             <li>Women</li>
             <li>Shoes</li>
@@ -25,9 +22,9 @@ export default function Footer() {
             {/* <li>QR Code Integration for Easy Access</li> */}
           </ul>
         </div>
-        <div>
-          <h4 className="pb-4 text-[20px] text-">Pages</h4>
-          <ul className="flex flex-col gap-2">
+        <div className="">
+          <h4 className="pb-1 text-[20px] font-[500]">Pages</h4>
+          <ul className="flex flex-col text-[18px] gap-2">
             <li>
               <a href="#">Home</a>
             </li>
@@ -74,7 +71,7 @@ export default function Footer() {
           <p>@2025 BagStor, All rights Reserved </p>
         </div>
         <div>
-          <ul className="flex gap-2">
+          <ul className="flex gap-2 justify-center">
             <li>Terms & Conditions</li>
             <li>FAQ</li>
             <li>Privacy Policy</li>
