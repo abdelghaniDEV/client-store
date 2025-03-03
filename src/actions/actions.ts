@@ -1,8 +1,7 @@
 "use server";
 
 import { CartState } from "@/redux/slices/cart.slice";
-import { RootState } from "@/redux/store";
-import { CartItem, order, submitOrder } from "@/types";
+import { order, submitOrder } from "@/types";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
