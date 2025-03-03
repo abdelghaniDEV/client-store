@@ -36,9 +36,10 @@ interface CountryData {
 type CountrySelectProps = {
   setData: React.Dispatch<React.SetStateAction<order>>;
   data: order;
+  error : string;
 };
 
-export default function CountrySelect({ setData }: CountrySelectProps) {
+export default function CountrySelect({ setData  , error}: CountrySelectProps) {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -66,14 +67,14 @@ export default function CountrySelect({ setData }: CountrySelectProps) {
   }, []);
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 relative">
       <Label>Country</Label>
       <Select
         onValueChange={(value) =>
           setData((prev) => ({ ...prev, country: value }))
         }
       >
-        <SelectTrigger className="w-full border-[1px]">
+        <SelectTrigger className={`w-full border-[1px] ${error && "border-red-500"}`}>
           <SelectValue placeholder="Country" />
         </SelectTrigger>
         <SelectContent>
@@ -98,6 +99,7 @@ export default function CountrySelect({ setData }: CountrySelectProps) {
           <SelectItem value="light">Light</SelectItem>
         </SelectContent>
       </Select>
+      {error && <p className="text-red-500 text-[12px] absolute bottom-[-18px]">{error}</p>}
     </div>
   );
 }

@@ -13,7 +13,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 //   quantity: number;
 // }
 
-interface CartState {
+export interface CartState {
   items: CartItem[];
   totalQuantity: number;
   totalPrice: number;

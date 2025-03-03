@@ -37,9 +37,10 @@ interface FormattedCountry {
 type phoneNumberProps = {
   setData: React.Dispatch<React.SetStateAction<order>>;
   data: order;
+  error : string;
 };
 
-export default function PhoneNumberInput({ setData }: phoneNumberProps) {
+export default function PhoneNumberInput({ setData , error }: phoneNumberProps) {
   const [countries, setCountries] = useState<FormattedCountry[]>([]);
   const [selectedCountry, setSelectedCountry] = useState<string>("+122");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -106,11 +107,11 @@ export default function PhoneNumberInput({ setData }: phoneNumberProps) {
   }, [phoneNumber, selectedCountry, setData]);
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 ">
       <Label>
         Phone Number <span className="text-red-500">*</span>
       </Label>
-      <div className="flex gap-2">
+      <div className="flex gap-2 relative">
         <Select onValueChange={(value) => handelChange(value)}>
           <SelectTrigger className="w-[120px] border-[1px]">
             <SelectValue placeholder={selectedCountry} />
@@ -140,6 +141,7 @@ export default function PhoneNumberInput({ setData }: phoneNumberProps) {
           placeholder="Entre Phone Number"
           onChange={(e) => setPhoneNumber(e.target.value)}
         />
+        {error && <p className="text-red-500 text-[12px] absolute bottom-[-18px]">{error}</p>}
       </div>
     </div>
   );

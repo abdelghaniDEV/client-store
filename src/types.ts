@@ -43,13 +43,33 @@ export interface reviewsItem {
   created_at: Date;
 }
 
-
-export interface order  {
-  fullName : string,
-  email: string,
-  address: string,
-  city: string,
-  zipCode: string,
-  phone: string,
-  country: string,
+export interface order {
+  fullName: string;
+  email: string;
+  address: string;
+  city: string;
+  zipCode: string;
+  phone: string;
+  country: string;
 }
+
+
+export interface submitOrder {
+  fullName: string;
+  email: string;
+  address: string;
+  city: string;
+  zipCode: string;
+  phone: string;
+  country: string;
+  products: {
+    product: string;
+    quantity: number;
+    totalPrice: number;
+    size?: string;
+    color?: string;
+  }[]; // ✅ مصفوفة بدلاً من Tuple
+  totalItems: number;
+  totalPrice: number;
+}
+
