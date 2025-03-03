@@ -102,7 +102,7 @@ export default function CheckoutForm() {
     return isValid;
   };
 
-  const handelSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (checkData()) {
       // Place order logic here
@@ -129,7 +129,7 @@ export default function CheckoutForm() {
       </p>
 
       <div className="pt-4 pb-8">
-        <form className="flex flex-col gap-5">
+        <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
           {/* Full Name */}
           <div className="flex flex-col gap-2 relative">
             <Label>
@@ -263,7 +263,7 @@ export default function CheckoutForm() {
           <div className="grid md:grid-cols-2 gap-4 grid-cols-1">
             <Button
               className="border-main-secondary border-[1px] text-[18px] flex items-center gap-2"
-              onClick={handelSubmit}
+              type="submit"
             >
               {/* <Truck />
               <span>Cash on delivery</span> */}
