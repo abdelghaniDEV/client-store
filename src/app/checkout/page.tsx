@@ -17,9 +17,9 @@ export default function Checkout() {
       <div className="container">
         <h2 className="text-[35px] font-[500]">Checkout</h2>
         <div className="grid md:grid-cols-2  grid-cols-1 ">
-          <div className=" pr-10">
+          <div className=" lg:pr-10">
             <h4 className="text-[25px] font-[500]">List Products</h4>
-            <ScrollArea className=" h-[600px]  pr-10">
+            <ScrollArea className=" h-[600px]  lg:pr-10">
               <ListCart cart={cart.items} />
             </ScrollArea>
           </div>

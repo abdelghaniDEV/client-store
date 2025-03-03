@@ -31,7 +31,7 @@ export default function CheckoutForm() {
   };
 
   return (
-    <div className="border-l-[1px] pl-10">
+    <div className="lg:border-l-[1px] lg:pl-10">
       <h4 className="text-[25px] font-[500]">Shipping Information</h4>
       <p className="text-gray-400">
         Complete your order by providing your shipping details.
