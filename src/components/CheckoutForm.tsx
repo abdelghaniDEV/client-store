@@ -12,6 +12,7 @@ import { order } from "@/types";
 import { createOrder } from "@/actions/actions";
 import loading from "../assets/loading.svg"
 import Image from "next/image";
+import { useRouter } from 'next/navigation'
 
 export default function CheckoutForm() {
   const cart = useSelector((state: RootState) => state.cart);
@@ -29,6 +30,8 @@ export default function CheckoutForm() {
   const [data, setData] = useState<order>(initialState);
   const [errors, setErrors] = useState<order>(initialState);
   const [loadingData, setLoadingData] = useState(false);
+
+  const router = useRouter()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -112,7 +115,8 @@ export default function CheckoutForm() {
         console.log("Order created successfully", response);
         // Clear cart and reset form
         setLoadingData(false);
-      } catch (err) {
+        router.push('/success')
+      } catch (err) { 
         console.error(err);
         setLoadingData(false);
         // Handle error here
