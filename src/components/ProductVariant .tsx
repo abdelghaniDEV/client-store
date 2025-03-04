@@ -209,7 +209,7 @@ export default function ProductVariant({ product }: ProductVariantProps) {
             onClick={() => addToCart()}
           >
             <span>ADD TO CART</span>
-            <span> ${product?.price}</span>
+            <span> ${(product?.price * counter).toFixed(2)}</span>
           </Button>
 
           <div

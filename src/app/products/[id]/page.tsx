@@ -7,7 +7,6 @@ import ProductReview from "@/components/ProductReview";
 import ProductVariant from "@/components/ProductVariant ";
 import RalatedProducts from "@/components/RalatedProducts";
 import { Category, Product } from "@/types";
-
 import { Box, ChevronRight, Home } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
@@ -34,7 +33,7 @@ export default function ProductDetails() {
   }, [id]);
 
   const checkAvariableStock = () => {
-    // التحقق من وجود stock
+    
     if (product?.stock === undefined) {
       return <span className="text-[16px] text-[#9e9e9e] font-[400]">Stock data not available</span>;
     }

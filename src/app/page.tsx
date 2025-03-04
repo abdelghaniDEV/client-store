@@ -1,36 +1,19 @@
 import React from "react";
-import imgHero from "../assets/hero01 (1).webp";
-import imgHero2 from "../assets/hero01 (2).webp";
-import BoxHero from "@/components/home/BoxHero";
+import imgHero from "../assets/hero01.png";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import NewProducts from "@/components/home/NewProducts";
 import Features from "@/components/home/Features";
 import TitleHome from "@/components/ui/TitleHome";
-import CategoriesSection from "@/components/home/CategoriesSection";;
+import CategoriesSection from "@/components/home/CategoriesSection";
 
+import SliderHero from "@/components/SliderHero";
 export default function Home() {
   return (
     <div className="realtive z-10">
-      <div className=" grid lg:grid-cols-3 sm:grid-cols-2  items-center    ">
-        <BoxHero
-          image={imgHero}
-          title=" SBpacious, Stylish, and Always Ready"
-          buttonText="Shop New"
-        />
-         <BoxHero
-          image={imgHero2}
-          title=" Best Leather Bag for Professionals"
-          buttonText="Free Shipping (new)"
-        /> 
-        <BoxHero
-          image={imgHero}
-          title="Carry Confidence, Carry Leather"
-          buttonText="Shop the Sale Now "
-        /> 
-      </div>
-      
+      <SliderHero />
+
       <CategoriesSection />
       <div className="container py-10">
         <div className="flex items-center justify-between">
@@ -71,7 +54,11 @@ export default function Home() {
       <div className=" w-full md:h-[350px] overflow-hidden mb-5">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div>
-            <Image src={imgHero} alt="hero" className="h-[400px] md:h-auto hidden md:block" />
+            <Image
+              src={imgHero}
+              alt="hero"
+              className="h-[400px] md:h-auto hidden md:block"
+            />
           </div>
           <div className="border-[1px] flex flex-col items-center gap-4 py-10 md:pt-[50px] bg-main-primary">
             <h1 className="font-nunito text-] leading-[30px]  md:text-[30px] font-[700]">

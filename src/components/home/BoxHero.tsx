@@ -1,37 +1,34 @@
 "use client";
 import React from "react";
-import Image, { StaticImageData } from "next/image";
 import { Button } from "../ui/button";
-import { ArrowUpCircle } from "lucide-react";
-import { motion } from "motion/react";
+import { ArrowLeft } from "lucide-react";
 
 type BoxHeroProps = {
-  image: string | StaticImageData; 
+  image: string; // Ensure it's a URL string
   title: string;
   buttonText: string;
+  subTitle: string;
 };
 
-export default function BoxHero({ image, title, buttonText }: BoxHeroProps) {
-
+export default function BoxHero({
+  image,
+  title,
+  buttonText,
+  subTitle,
+}: BoxHeroProps) {
   return (
-    <div className="relative overflow-hidden">
-      <Image src={image} className="md:h-[540px] w-full" alt="hero01" />
-      <motion.div
-        initial={{ opacity: 0, y: 200 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.1 }}
-        className="flex flex-col gap-8 absolute  bottom-[50px] font-[600] text-white"
-      >
-        <div className="px-3 text-center">
-          <h1 className="text-[50px]  leading-[60px]">{title}</h1>
-          <Button style={{ 
-            backgroundColor : "#F2B78D"
-           }} className="text-black mt-8 banner">
-            <span>{buttonText}</span>
-            <ArrowUpCircle className="h-10 w-10  text-black" />
-          </Button>
-        </div>
-      </motion.div>
+    <div
+      className="w-full relative h-[350px] md:h-[560px] bg-right bg-cover md:bg-center"
+      style={{ backgroundImage: `url(${image})` }} // ✅ Correct way to set background
+    >
+      <div className="container absolute top-1/2 transform -translate-y-1/2 md:w-[700px] text-black">
+        <span className="md:text-[30px] text-[20px]">{subTitle}</span>
+        <h1 className="text-[35px] leading-[30px] md:text-[50px] md:leading-[60px]  font-medium">{title}</h1>
+        <Button className="text-white bg-main-secondary mt-4 text-[16px] rounded-none flex items-center gap-2">
+          <span>{buttonText}</span>
+          <ArrowLeft />
+        </Button>
+      </div>
     </div>
   );
 }
