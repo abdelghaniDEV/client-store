@@ -8,11 +8,13 @@ import ListCart from "./ListCart";
 import { Button } from "./ui/button";
 import { clearCart } from "@/redux/slices/cart.slice";
 import Link from "next/link";
+import { closeCart, openCart } from "@/redux/slices/openCart.slice";
 
 export default function Cart() {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   const cart = useSelector((state: RootState) => state.cart);
   const dispatch = useDispatch<AppDispatch>();
+  const open = useSelector((state: RootState) => state.openCart.isOpen)
 
   const item = {
     exit: {
@@ -28,7 +30,10 @@ export default function Cart() {
   return (
     <div>
       <div className="relative">
-        <ShoppingBag className="h-5 w-5 cursor-pointer" onClick={() => setOpen(!open)} />
+        <ShoppingBag
+          className="h-5 w-5 cursor-pointer"
+          onClick={() => dispatch(openCart())}
+        />
         <div className="w-4 h-4 rounded-full bg-main-secondary flex items-center justify-center absolute top-[-13px] right-[16px]">
           <span className="  text-white text-[13px] font-[500]">
             {cart.items.length}
@@ -53,7 +58,7 @@ export default function Cart() {
                 <X
                   className="bg-main-primary rounded-full w-8 h-8 p-1 cursor-pointer 
              transition-transform duration-300 hover:rotate-90 hover:text-red-500"
-                  onClick={() => setOpen(false)}
+                  onClick={() => dispatch(closeCart())}
                 />
               </div>
             </div>
@@ -68,8 +73,11 @@ export default function Cart() {
                 <h4>${cart.totalPrice.toFixed(2)}</h4>
               </div>
               <div className="grid grid-cols-2 items-center gap-4 mt-3">
-                <Button className="bg-main-secondary text-white text-[18px]" onClick={() => setOpen(false)}>
-                  <Link href={'/checkout'}>Check Out</Link>
+                <Button
+                  className="bg-main-secondary text-white text-[18px]"
+                  onClick={() => dispatch(closeCart())}
+                >
+                  <Link href={"/checkout"}>Check Out</Link>
                 </Button>
                 <Button className=" text-black border-[1px] border-main-secondary text-[18px]">
                   View Cart
