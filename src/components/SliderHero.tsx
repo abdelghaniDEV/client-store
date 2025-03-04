@@ -14,7 +14,7 @@ const SliderHero = () => {
       pagination={{ clickable: true }}
       autoplay={{ delay: 3000 }}
       loop={true}
-      className="w-full h-[400px] md:h-[560px]"
+      className="w-full h-[450px] md:h-[560px]"
     >
       <SwiperSlide>
         <BoxHero
