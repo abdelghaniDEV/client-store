@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function FooterMobile() {
   return (
-    <div className='fixed bottom-0 z-[1000] bg-white drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] w-full pt-2'>
+    <div className='fixed bottom-0 z-[1000] bg-white drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] md:hidden w-full pt-2'>
       <div className='grid grid-cols-4 items-center container'>
         <div className='flex flex-col items-center '>
           <LayoutDashboard className='w-5 h-5' />

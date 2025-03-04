@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Button } from "../ui/button";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 type BoxHeroProps = {
   image: string; // Ensure it's a URL string
