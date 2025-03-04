@@ -4,7 +4,6 @@ import { Heart, LayoutDashboard, Search, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Cart from "./Cart";
 import { toggleCart } from "@/redux/slices/openCart.slice";
 
 export default function FooterMobile() {

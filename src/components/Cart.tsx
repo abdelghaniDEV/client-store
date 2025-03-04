@@ -1,6 +1,6 @@
 "use client";
 import { ShoppingBag, X } from "lucide-react";
-import React, { useState } from "react";
+import React  from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/redux/store";
