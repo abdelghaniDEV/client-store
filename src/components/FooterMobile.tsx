@@ -11,7 +11,6 @@ export default function FooterMobile() {
     (statu: RootState) => statu.wishlist.items.length
   );
   const cart = useSelector((statu: RootState) => statu.cart.items.length);
-  const openCart = useSelector((statu: RootState) => statu.openCart);
   const dispatch = useDispatch<AppDispatch>();
 
   return (
