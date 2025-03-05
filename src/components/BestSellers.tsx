@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import TitleHome from "./ui/TitleHome";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
-import { getAllProducts } from "@/actions/actions";
+import { getAllProducts } from "@/actions/actions"
 import Link from "next/link";
 import ListProducts from "./ListProducts";
 
