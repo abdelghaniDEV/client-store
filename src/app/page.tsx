@@ -1,11 +1,9 @@
 import React from "react";
 import imgHero from "../assets/hero01.png";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import NewProducts from "@/components/home/NewProducts";
 import Features from "@/components/home/Features";
-import TitleHome from "@/components/ui/TitleHome";
 import CategoriesSection from "@/components/home/CategoriesSection";
 
 import SliderHero from "@/components/SliderHero";
