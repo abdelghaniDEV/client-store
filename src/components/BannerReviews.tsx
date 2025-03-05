@@ -16,7 +16,7 @@ export default function BannerReviews() {
   useEffect(() => {
     const fetchedReviews = async () => {
       const response = await getAllReviews("1", "5");
-      setReviews(response.data);
+      setReviews(response?.data);
     };
     fetchedReviews();
   }, []);
@@ -67,7 +67,7 @@ export default function BannerReviews() {
                   </div>
                   <div className="pl-4 pt-1 md:py-3">
                     <p className="text-[18px] md:leading-[20px] text-main-text line-clamp-6">
-                      {review.comment}
+                      {review?.comment}
                     </p>
                   </div>
                 </div>
