@@ -69,6 +69,18 @@ export const getAllCategories = async () => {
   }
 };
 
+export const getAllReviews = async (page: string, limit: string) => {
+  try {
+    const response = await fetch(
+      `${apiUrl}/ratings?page=${page}&limit=${limit}`
+    );
+    return await response.json();
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
 export const getProductReviews = async (productId: string) => {
   try {
     const response = await fetch(`${apiUrl}/ratings/${productId}`);
