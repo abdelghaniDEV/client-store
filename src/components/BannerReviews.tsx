@@ -17,6 +17,7 @@ export default function BannerReviews() {
     const fetchedReviews = async () => {
       const response = await getAllReviews("1", "5");
       setReviews(response?.data);
+      console.log(Reviews);
     };
     fetchedReviews();
   }, []);

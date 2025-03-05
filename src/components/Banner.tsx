@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 export default function Banner() {
   return (
     <div
-      className="w-full relative h-[400px] bg-[url(/banner-01.jpg)] md:h-[520px] bg-cover bg-center my-6  "
+      className="w-full relative h-[400px] bg-[url(/banner-01.jpg)] md:h-[400px] bg-cover bg-center my-6  "
       // ✅ Correct way to set background
     >
       <div className="absolute top-[50%] translate-y-[-50%] right-[12%] text-center text-white flex flex-col items-center justify-center">
