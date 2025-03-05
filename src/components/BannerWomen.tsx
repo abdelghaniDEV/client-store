@@ -26,7 +26,7 @@ export default function BannerWomen() {
         for Women
         </h1>
         <p className="text-[18px] text-center md:text-center">
-        What you wear often shows what kind of person you are.Show a different personality you don't have with your clothing.
+        What you wear often shows what kind of person you are.Show a different personality you dont have with your clothing.
         </p>
         <div className=" ">
           <Button className="bg-main-secondary text-white  mt-4 md:text-[16px] rounded-none  md:w-auto flex items-center   gap-2">
