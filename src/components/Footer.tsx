@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { Category } from "@/types";
