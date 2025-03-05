@@ -1,25 +1,38 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import imgHero from "../../assets/hero01 (2).webp";
+import { Product } from "@/types";
 
-export default function NewProdcutCart() {
+interface NewProdcutCartProps {
+  product: Product;
+}
+
+export default function NewProdcutCart({ product }: NewProdcutCartProps) {
   const [showDialog, setShowDialog] = useState(false);
 
   return (
     <div>
       <div className="relative">
-        <Image src={imgHero} alt="Hero" />
+        <div>
+          <Image
+            src={product.images[0]}
+            alt="Hero"
+            width={100}
+            height={400}
+            className="w-full h-[500px] md:h-[400px]"
+            unoptimized
+          />
+        </div>
         {showDialog && (
           <div className="absolute top-[32%] w-[200px] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[5px] bg-[#e0dede] p-3">
             <div>
-              <Image src={imgHero} alt="hep" className="w-full" />
+              <Image src={product.images[0]} alt="hep" className="w-full h-[200px]" width={100} height={200} />
             </div>
             <h2 className="text-[15px] md:text-[18px] leading-[20px]">
-              Sac reporter convertible
+              {product.name}
             </h2>
             <div className="flex items-center gap-3">
-              <p className="font-[500]">$100.99</p>
+              <p className="font-[500]">${product.price}</p>
               <p className="font-[500] line-through text-red-500">$180.65</p>
             </div>
             <div>
@@ -35,9 +48,9 @@ export default function NewProdcutCart() {
         )}
         <div
           onClick={() => setShowDialog(!showDialog)}
-          className="absolute left-[50%] cursor-pointer top-[80%] translate-x-[-50%] translate-y-[-50%]  border-main-primary border-[1px] rounded-full p-1  "
+          className="absolute left-[50%] cursor-pointer top-[80%] translate-x-[-50%] translate-y-[-50%]  border-[#e0dede] border-[1px] rounded-full p-1  "
         >
-          <div className="bg-main-primary w-6 h-6 rounded-full"></div>
+          <div className="bg-[#e0dede] w-6 h-6 rounded-full"></div>
         </div>
       </div>
     </div>
