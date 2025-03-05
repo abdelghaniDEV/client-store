@@ -18,7 +18,7 @@ export default function ListProducts({
     return Array.from({ length: Number(limit) }, (_, index) => {
       return (
         <div key={index} className=" b">
-          <Skeleton className="md:w-[262px] w-full h-[280px] md:h-[306px]" />
+          <Skeleton className="md:w-[262px] w-full h-[200px] md:h-[306px]" />
           <Skeleton className="w-full mt-2 h-[20px]" />
           <div className="flex items-center gap-2 mt-2">
             <Skeleton className="w-[100px] h-[20px]" />

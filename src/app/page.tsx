@@ -9,46 +9,14 @@ import TitleHome from "@/components/ui/TitleHome";
 import CategoriesSection from "@/components/home/CategoriesSection";
 
 import SliderHero from "@/components/SliderHero";
+import BestSellers from "@/components/BestSellers";
 export default function Home() {
   return (
     <div className="realtive z-10">
       <SliderHero />
 
       <CategoriesSection />
-      <div className="container py-10">
-        <div className="flex items-center justify-between">
-          <div>
-            <TitleHome>Best sellers</TitleHome>
-            <p className="tmd:ext-[20px]">
-              Our Best-Selling Bags, Handpicked for You
-            </p>
-          </div>
-          <div className="hidden md:block">
-            <Button className="flex items-center gap-3 ">
-              <span className="text-[20px]">More Products</span>
-              <ArrowRight className="h-10 w-10 " />
-            </Button>
-          </div>
-        </div>
-        <div className="py-5">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {/* <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart /> */}
-          </div>
-          <div className="pt-8 flex justify-center md:hidden">
-            <Button className="flex items-center gap-2 ">
-              <span className="text-[17px]">More Products</span>
-              <ArrowRight className="h-10 w-10 " />
-            </Button>
-          </div>
-        </div>
-      </div>
+      <BestSellers />
       <NewProducts />
       <Features />
       <div className=" w-full md:h-[350px] overflow-hidden mb-5">
