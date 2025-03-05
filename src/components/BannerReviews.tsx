@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { reviewsItem } from "@/types";
-import ReviewCart from "./ReviewCart";
+
 import TitleHome from "./ui/TitleHome";
 
 export default function BannerReviews() {
