@@ -7,7 +7,6 @@ import SliderHero from "@/components/SliderHero";
 import BestSellers from "@/components/BestSellers";
 import Banner from "@/components/Banner";
 import BannerWomen from "@/components/BannerWomen";
-import BannerReviews from "@/components/BannerReviews";
 export default function Home() {
   return (
     <div className="realtive z-10">
