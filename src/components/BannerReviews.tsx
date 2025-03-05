@@ -40,7 +40,7 @@ export default function BannerReviews() {
           loop={true}
           className="w-full h-[300px]"
         >
-          {Reviews.map((review: reviewsItem) => {
+          {Reviews?.map((review: reviewsItem) => {
             return (
               <SwiperSlide
                 key={review._id}
