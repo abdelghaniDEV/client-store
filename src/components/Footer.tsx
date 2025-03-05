@@ -9,8 +9,9 @@ import Link from "next/link";
 export default function Footer() {
   const categories = useSelector((statu: RootState) => statu.categories);
   return (
-    <div className="bg bg-main-primary w-full  text-black  ">
+    <div className="bg bg-main-primary w-full  text-black  pt-10 pb-20 md:pb-10 ">
       <div className="flex gap-4 flex-col lg:flex-row  container">
+        
         <div>
           <p className="lg:w-[300px] uppercase text-[25px] md:text-[35px] md:leading-[35px] lg:text-[25px] font-[600] leading-[22px]">
             Get Creative white clothes : <br /> stylish inspiration for every
