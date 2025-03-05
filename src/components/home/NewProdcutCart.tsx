@@ -19,14 +19,14 @@ export default function NewProdcutCart({ product }: NewProdcutCartProps) {
             alt="Hero"
             width={100}
             height={400}
-            className="w-full h-[500px] md:h-[400px]"
+            className="w-full h-[500px] md:h-[350px] lg:h-[400px] "
             unoptimized
           />
         </div>
         {showDialog && (
-          <div className="absolute top-[32%] w-[200px] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[5px] bg-[#e0dede] p-3">
+          <div className="absolute top-[32%] w-[180px] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-[5px] bg-[#e0dede] p-3">
             <div>
-              <Image src={product.images[0]} alt="hep" className="w-full h-[200px]" width={100} height={200} />
+              <Image src={product.images[0]} alt="hep" className="w-full h-[160px]" width={100} height={200} />
             </div>
             <h2 className="text-[15px] md:text-[18px] leading-[20px]">
               {product.name}

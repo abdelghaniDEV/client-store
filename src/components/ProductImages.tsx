@@ -21,15 +21,15 @@ export default function ProductImages({ product }: ProductImagesProps) { // اس
   return (
     <div>
       <div className="flex flex-col gap-2">
-        <div className="w-full h-[480px] md:h-[530px]">
+        <div className="w-full h-[480px] md:h-[650px] lg:h-[530px]">
           {selectImage ? (
             <Image
               src={selectImage}
               alt={product?.name || "Product Image"}
-              className="w-full h-[480px] md:h-[530px] object-cover rounded-lg"
+              className="w-full h-[480px] md:h-[650px] lg:h-[530px] object-cover rounded-lg"
               priority
               width={800}
-              height={530}
+              height={630}
               quality={100}
             />
           ) : (

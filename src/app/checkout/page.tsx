@@ -16,7 +16,7 @@ export default function Checkout() {
     <div className="bg-main-muted py-3">
       <div className="container">
         <h2 className="text-[35px] font-[500]">Checkout</h2>
-        <div className="grid md:grid-cols-2  grid-cols-1 ">
+        <div className="grid lg:grid-cols-2  grid-cols-1 ">
           <div className=" lg:pr-10">
             <h4 className="text-[25px] font-[500]">List Products</h4>
             <ScrollArea className=" lg:h-[600px]  lg:pr-10">

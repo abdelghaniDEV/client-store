@@ -5,7 +5,7 @@ import { CircleHelp, RotateCcw, Share2, Timer, Truck } from "lucide-react";
 export default function ProductConditions() {
   return (
     <div className="text-main-text pt-3">
-      <div className="flex items-center flex-wrap gap-2 ">
+      <div className="flex items-center md:justify-between flex-wrap gap-2 ">
         <div className="flex items-center gap-2">
           <Truck />
           <span>Delivery & Return</span>

@@ -28,7 +28,7 @@ export default function BestSellers() {
   }, []);
   return (
     <div>
-      <div className=" py-10">
+      <div className=" pt-10">
         <div className="flex items-center container justify-between">
           <div>
             <TitleHome>Best sellers</TitleHome>

@@ -18,7 +18,7 @@ export default function ListProducts({
     return Array.from({ length: Number(limit) }, (_, index) => {
       return (
         <div key={index} className=" b">
-          <Skeleton className="md:w-[262px] w-full h-[200px] md:h-[306px]" />
+          <Skeleton className=" w-full h-[200px] md:h-[306px]" />
           <Skeleton className="w-full mt-2 h-[20px]" />
           <div className="flex items-center gap-2 mt-2">
             <Skeleton className="w-[100px] h-[20px]" />
@@ -29,7 +29,7 @@ export default function ListProducts({
     });
   };
   return (
-    <div className="container grid grid-cols-2 pb-8 md:grid-cols-4 gap-2 md:gap-[20px] ">
+    <div className="container grid grid-cols-2  md:grid-cols-3 pb-8 lg:grid-cols-4 gap-2 lg:gap-[20px] ">
       {loading ? (
         <>
           {products.map((product: Product) => (
