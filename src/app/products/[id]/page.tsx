@@ -83,7 +83,7 @@ export default function ProductDetails() {
   return (
     <div>
       <div className="container py-1">
-        <div className="flex items-center text-main-text pb-2 md:pb-3 text-[15px] ">
+        <div className="flex items-center text-main-text pb-2 md:pb-3 text-[14px] md:text-[15px] ">
           <Link href={"/"} className="flex items-center gap-1">
             <Home className="w-4 h-4" />
             Home
@@ -94,7 +94,7 @@ export default function ProductDetails() {
             Products
           </Link>
           <ChevronRight />
-          <span className="font-[600] text-black">{product?.name}</span>
+          <p className="font-[600] text-black line-clamp-1">{product?.name}</p>
         </div>
         {/* product details */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 border-b-[1px] md:pb-4">
