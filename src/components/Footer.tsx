@@ -10,10 +10,9 @@ export default function Footer() {
   const categories = useSelector((statu: RootState) => statu.categories);
   return (
     <div className="bg bg-main-primary w-full  text-black  pt-10 pb-20 md:pb-10 ">
-      <div className="flex gap-4 flex-col lg:flex-row  container">
-        
+      <div className="flex gap-4 flex-col lg:flex-row lg:justify-between  container">
         <div>
-          <p className="lg:w-[300px] uppercase text-[25px] md:text-[35px] md:leading-[35px] lg:text-[25px] font-[600] leading-[22px]">
+          <p className="lg:w-[400px] uppercase text-[25px] md:text-[35px] md:leading-[35px] lg:text-[25px] font-[600] leading-[22px]">
             Get Creative white clothes : <br /> stylish inspiration for every
             occation .
           </p>
@@ -77,7 +76,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="pt-4">
+      <div className="pt-4 md:pt-10">
         <p className="text-[14px] text-center text-gray-500">
           &copy; 2022 All rights reserved. Designed by{" "}
           <span className="text-main-text">BAGSTORE</span>
