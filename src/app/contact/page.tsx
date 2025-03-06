@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import "leaflet/dist/leaflet.css";
@@ -10,8 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 export default function Contact() {
-//   const [position, setPosition] = useState<LatLngExpression>([51.505, -0.09]);
-  const position : LatLngExpression = [51.505, -0.09]
+  const [position, setPosition] = useState<LatLngExpression>([51.505, -0.09]);
+  
   return (
     <div className="pb-10">
       <div className="w-full h-[20vh] xl:h-[35vh]   mb-[30px] relative bg-[url(/BannerShop.png)] bg-[80%] bg-cover ">
