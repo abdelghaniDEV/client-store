@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { Category } from "@/types";
 import Link from "next/link";
+import logo from "../assets/ARWA.SHOP-logo.png"
+import Image from "next/image";
 
 export default function Footer() {
   const categories = useSelector((statu: RootState) => statu.categories);
@@ -12,7 +14,10 @@ export default function Footer() {
     <div className="bg bg-main-primary w-full  text-black  pt-10 pb-20 md:pb-10 ">
       <div className="flex gap-4 flex-col lg:flex-row lg:justify-between  container">
         <div>
-          <p className="lg:w-[400px] uppercase text-[25px] md:text-[35px] md:leading-[35px] lg:text-[25px] font-[600] leading-[22px]">
+        <div className="w-[200px] md:w-[250px] h-[50px] ">
+            <Image src={logo} alt="logo" width={100} height={100} className="w-[200px] md:w-[250px] bg-cover" unoptimized />
+          </div>
+          <p className="lg:w-[400px] uppercase  text-[25px] md:text-[35px] md:leading-[35px] lg:text-[25px] font-[400] leading-[22px]">
             Get Creative white clothes : <br /> stylish inspiration for every
             occation .
           </p>

@@ -7,6 +7,8 @@ import { AppDispatch, RootState } from "@/redux/store";
 import { fetchCategories } from "@/redux/slices/categories.slice";
 import Cart from "./Cart";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../assets/ARWA.SHOP-logo.png"
 
 export default function Header() {
   const [openNavbar, setOpenNavbar] = useState(false);
@@ -28,10 +30,8 @@ export default function Header() {
               onClick={() => setOpenNavbar(!openNavbar)}
             />
           </div>
-          <div>
-            <h1 className="font-nunito textpx] md:text-[30px] font-[700]">
-              BagStore
-            </h1>
+          <div className="w-[120px] md:w-[150px] h-[20px] ">
+            <Image src={logo} alt="logo" width={100} height={100} className="w-[120px] md:w-[150px] bg-cover" unoptimized />
           </div>
 
           <Navbar openNavbar={openNavbar} setOpenNavbar={setOpenNavbar} />
