@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 export default function Contact() {
-  const [position, setPosition] = useState<LatLngExpression>([51.505, -0.09]);
+  const [position , ] = useState<LatLngExpression>([51.505, -0.09]);
   
   return (
     <div className="pb-10">
