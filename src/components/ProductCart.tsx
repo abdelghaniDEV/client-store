@@ -77,7 +77,7 @@ export default function ProductCart({ product }: productCartProps) {
         </div> */}
         <AnimatePresence>
           {isHovered && (
-            <div className="">
+            <div className="hidden md:block">
               <ProductCartIcons product={product} setOpenCart={setOpenCart} />
               <motion.div
                 initial={{ opacity: 0 }}
