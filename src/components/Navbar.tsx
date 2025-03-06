@@ -13,10 +13,10 @@ export default function Navbar({openNavbar , setOpenNavbar} : navbarProps) {
       }`} >
         <ul className='flex flex-col md:flex-row items-center gap-5 text-[26px] md:text-[19px] font-[400] '>
             <li onClick={() => setOpenNavbar(!openNavbar)} ><Link href={'/'}>Home</Link></li>
-            <li><Link href='/shop'>Shop</Link></li>
-            <li><Link href='/products'>Products</Link></li>
-            <li><a href='#'>About</a></li>
-            <li><a href='#'>Contact</a></li>
+            <li onClick={() => setOpenNavbar(!openNavbar)}><Link href='/shop'>Shop</Link></li>
+            <li onClick={() => setOpenNavbar(!openNavbar)}><Link href='/products'>Products</Link></li>
+            <li onClick={() => setOpenNavbar(!openNavbar)}><Link href='/about'>About</Link></li>
+            <li onClick={() => setOpenNavbar(!openNavbar)}><Link href='/contact'>Contact</Link></li>
         </ul> 
     </div>
   )
