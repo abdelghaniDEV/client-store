@@ -75,7 +75,7 @@ export default function ProductCart({ product }: productCartProps) {
                 transition={{ duration: 0.3 }}
                 className="absolute bottom-[20px] left-[50%] translate-x-[-50%] "
               >
-                <Button className="w-[200px] bg-white hover:bg-black hover:text-white cursor-pointer rounded-[30px]">
+                <Button onClick={() => setOpenCart(true)} className="w-[200px] bg-white hover:bg-black hover:text-white cursor-pointer rounded-[30px]">
                   ADD TO CART
                 </Button>
               </motion.div>

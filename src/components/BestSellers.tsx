@@ -36,12 +36,12 @@ export default function BestSellers() {
               Our Best-Selling Bags, Handpicked for You
             </p>
           </div>
-          <div className="hidden md:block">
+          <Link href={'/products'} className="hidden md:block">
             <Button className="flex items-center gap-3 ">
               <span className="text-[20px]">More Products</span>
               <ArrowRight className="h-10 w-10 " />
             </Button>
-          </div>
+          </Link>
         </div>
         <div className="pt-5">
           <ListProducts products={products} limit={8} loading={loading} />

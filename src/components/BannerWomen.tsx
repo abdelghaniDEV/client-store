@@ -3,6 +3,7 @@ import imgHijab from "@/assets/29-3.jpg";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function BannerWomen() {
   return (
@@ -29,12 +30,12 @@ export default function BannerWomen() {
           What you wear often shows what kind of person you are.Show a different
           personality you dont have with your clothing.
         </p>
-        <div className=" ">
+        <Link href={'/products'} className=" ">
           <Button className="bg-main-secondary text-white  mt-4 md:text-[16px] rounded-none  md:w-auto flex items-center   gap-2">
             <span>Shop Now</span>
             <ArrowRight />
           </Button>
-        </div>
+        </Link>
       </div>
     </div>
   );

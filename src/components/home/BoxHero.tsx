@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 type BoxHeroProps = {
   image: string; // Ensure it's a URL string
@@ -28,12 +29,12 @@ export default function BoxHero({
         <h1 className="text-[35px] leading-[30px] md:text-[50px] md:leading-[60px]  md:font-medium">
           {title}
         </h1>
-        <div className="flex items-center justify-center md:justify-start">
+        <Link href={'/products'} className="flex items-center justify-center md:justify-start">
           <Button className="border-main-secondary border-[1px] mt-4 md:text-[16px] rounded-none  md:w-auto flex items-center  gap-2">
             <span>{buttonText}</span>
             <ArrowRight />
           </Button>
-        </div>
+        </Link>
       </div>
     </div>
   );

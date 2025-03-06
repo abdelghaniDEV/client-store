@@ -23,8 +23,8 @@ export default function Shop() {
           </div>
         </div>
       </div>
-      <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-6 pt-5">
+      <div className="container py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-6 ">
           {categories.map((category: Category) => (
             <BoxCategory
               key={category._id}

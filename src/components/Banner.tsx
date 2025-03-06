@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Banner() {
   return (
@@ -15,12 +16,12 @@ export default function Banner() {
         <h1 className="text-[35px] pt-2 leading-[30px] md:text-[50px] md:leading-[60px]  md:font-medium">
           Latest Men Fashion
         </h1>
-        <div className=" ">
+        <Link href={'/products'} className=" ">
           <Button className="bg-main-secondary  mt-4 md:text-[16px] rounded-none  md:w-auto flex items-center   gap-2">
             <span>Shop Now</span>
             <ArrowRight />
           </Button>
-        </div>
+        </Link>
       </div>
     </div>
   );

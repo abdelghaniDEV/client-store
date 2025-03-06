@@ -30,9 +30,9 @@ export default function Header() {
               onClick={() => setOpenNavbar(!openNavbar)}
             />
           </div>
-          <div className="w-[120px] md:w-[150px] h-[20px] ">
+          <Link href={'/'} className="w-[120px] md:w-[150px] h-[20px] ">
             <Image src={logo} alt="logo" width={100} height={100} className="w-[120px] md:w-[150px] bg-cover" unoptimized />
-          </div>
+          </Link>
 
           <Navbar openNavbar={openNavbar} setOpenNavbar={setOpenNavbar} />
 

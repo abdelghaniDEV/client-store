@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { Product } from "@/types";
+import Link from "next/link";
 
 interface NewProdcutCartProps {
   product: Product;
@@ -35,14 +36,14 @@ export default function NewProdcutCart({ product }: NewProdcutCartProps) {
               <p className="font-[500]">${product.price}</p>
               <p className="font-[500] line-through text-red-500">$180.65</p>
             </div>
-            <div>
+            <Link href={`products/${product._id}`}>
               <button
                 onClick={() => setShowDialog(false)}
                 className="  text-[16px] font-[500] border-b-[2px] border-black "
               >
                 QUICK VIEW
               </button>
-            </div>
+            </Link>
             <div className="w-4 h-4 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-[#e0dede] border-t-[20px] absolute bottom-[-20px]  left-[50%] translate-x-[-50%]  "></div>
           </div>
         )}

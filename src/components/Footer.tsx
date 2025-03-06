@@ -40,11 +40,13 @@ export default function Footer() {
           <div>
             <h4 className="pb-1 text-[20px] font-[500] text-">Pages</h4>
             <ul className="flex flex-col text-[18px] gap-2">
-              <li>Home</li>
-              <li>Shop</li>
-              <li>Products</li>
-              <li>About Us</li>
-              <li>Contact</li>
+              <li>
+                <Link href={'/'}>Home</Link>
+              </li>
+              <li><Link href={'/shop'}>Shop</Link></li>
+              <li><Link href={'/products'}>Product</Link></li>
+              <li><Link href={'/about'}>About Us</Link></li>
+              <li><Link href={'/contact'}>Contact US</Link></li>
             </ul>
           </div>
           <div>
@@ -70,12 +72,12 @@ export default function Footer() {
           <ul className="flex items-center flex-wrap gap-4">
             {categories.map((category: Category) => {
               return (
-                <li
+                <Link href={`/products?category=${category.name}`}
                   className="border-[1px] py-1 px-3 border-main-secondary"
                   key={category._id}
                 >
                   {category.name}
-                </li>
+              </Link>
               );
             })}
           </ul>
