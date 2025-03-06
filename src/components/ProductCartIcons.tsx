@@ -33,11 +33,7 @@ export default function ProductCartIcons({
     } else if (text === "Wishlist") {
       if (isInWishlist) {
         dispatch(removeFromWishlist(product._id)); // Remove if already in wishlist
-        // toast({
-        //   title: `${product.name} removed from your wishlist!`,
-        //   description: "Item has been removed from your wishlist.",
-        //   variant: "destructive",
-        // });
+       
       } else {
         dispatch(addToWishlist(product)); // Add if not in wishlist
         toast({

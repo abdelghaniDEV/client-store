@@ -11,6 +11,7 @@ import ProductCartIcons from "./ProductCartIcons";
 import { Product } from "@/types";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/redux/store";
+import { useToast } from "@/hooks/use-toast";
 import {
   addToWishlist,
   removeFromWishlist,
@@ -24,6 +25,7 @@ export default function ProductCart({ product }: productCartProps) {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [openCart, setOpenCart] = useState<boolean>(false);
   const [loading, setLoading] = useState(true);
+    const { toast } = useToast();
 
   const wishlist = useSelector((statu: RootState) => statu.wishlist.items);
   const isInWishlist = wishlist.some((item) => item._id === product._id);
@@ -45,6 +47,10 @@ export default function ProductCart({ product }: productCartProps) {
       dispatch(removeFromWishlist(product._id));
     } else {
       dispatch(addToWishlist(product));
+      toast({
+        title: `${product.name} added to your wishlist!`,
+        description: "Great choice! This item is now in your wishlist.",
+      });
     }
   };
 
