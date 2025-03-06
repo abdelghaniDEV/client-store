@@ -36,6 +36,7 @@ export default function Contact() {
           center={position}
           zoom={13}
           style={{ height: "100%", width: "100%" }}
+          className="z-[10]"
         >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
