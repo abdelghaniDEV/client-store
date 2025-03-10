@@ -68,7 +68,7 @@ export default function CategoriesSection() {
             </div>
           </div>
         </div> */}
-      <div className="flex flex-row gap-6 pt-5">
+      <div className="grid grid-cols-4 gap-6 pt-5">
         {categories.map((category : Category) => (
           <BoxCategory key={category._id} image={category.image} name={category.name} />
         ))}
