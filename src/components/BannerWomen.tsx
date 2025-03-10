@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function BannerWomen() {
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-20 container items-center py-6">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-20 px-3 md:px-[4rem] xl:px-[5rem] sm:px-[2rem] items-center py-6">
       <div className="w-full lg:h-[600px]">
         <Image
           src={imgHijab}

@@ -22,7 +22,7 @@ export default function BoxHero({
       className="w-full relative h-[450px] md:h-[560px]  bg-cover md:bg-center bg-right"
       style={{ backgroundImage: `url(${image})` }} // ✅ Correct way to set background
     >
-      <div className="container absolute md:top-1/2 bottom-[30px]  text-center md:text-start   transform md:-translate-y-1/2 md:w-[700px] text-black">
+      <div className="px-3 md:px-[4rem] xl:px-[5rem] sm:px-[2rem] absolute md:top-1/2 bottom-[30px]  text-center md:text-start   transform md:-translate-y-1/2 md:w-[700px] text-black">
         <span className="md:text-[30px] text-[20px] font-[500] md:font-normal border-main-secondary border-b-[2px]">
           {subTitle}
         </span>

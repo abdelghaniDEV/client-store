@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Features() {
   return (
-    <div className="container py-10">
+    <div className="px-3 md:px-[4rem] xl:px-[5rem] sm:px-[2rem] py-10">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div>
           <div className="flex flex-col items-center gap-2 ">

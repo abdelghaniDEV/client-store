@@ -9,7 +9,7 @@ import { Category } from "@/types";
 export default function CategoriesSection() {
   const categories = useSelector((state : RootState) => state.categories)
   return (
-    <div className="container pt-10">
+    <div className="px-3 md:px-[4rem] xl:px-[5rem] sm:px-[2rem] py-10">
       <div>
         <TitleHome>Shop by categories</TitleHome>
         <p className="tmd:ext-[20px]">
@@ -68,7 +68,7 @@ export default function CategoriesSection() {
             </div>
           </div>
         </div> */}
-      <div className="grid grid-cols-4 gap-6 pt-5">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 pt-5 ">
         {categories.map((category : Category) => (
           <BoxCategory key={category._id} image={category.image} name={category.name} />
         ))}

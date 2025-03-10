@@ -27,7 +27,7 @@ export default function NewProducts() {
 
   return (
     <div className="">
-      <div className="flex flex-col  container">
+      <div className="flex flex-col  px-3 md:px-[4rem] xl:px-[5rem] sm:px-[2rem]">
         <TitleHome>New Products</TitleHome>
         <p className="tmd:ext-[20px]">
           Our Best-Selling Bags, Handpicked for You

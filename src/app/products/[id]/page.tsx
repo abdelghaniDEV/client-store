@@ -84,7 +84,7 @@ export default function ProductDetails() {
 
   return (
     <div>
-      <div className="container py-1">
+      <div className=" px-3 md:px-[4rem] xl:px-[5rem] sm:px-[2rem] py-1">
         <div className="flex items-center text-main-text pb-2 md:pb-3 text-[14px] md:text-[15px] ">
           <Link href={"/"} className="flex items-center gap-1">
             <Home className="w-4 h-4" />
@@ -163,7 +163,7 @@ export default function ProductDetails() {
           </div>
         </div>
 
-        <div className=" text-[20px] py-3 md:text-[30px] flex gap-10 items-center  text-main-text justify-center font-[500]">
+        <div className=" text-[20px] py-3 md:text-[30px] flex gap-10 items-center   text-main-text justify-center font-[500]">
           <h3
             onClick={() => setShowSection("description")}
             className={`${

@@ -29,7 +29,7 @@ export default function ListProducts({
     });
   };
   return (
-    <div className="container grid grid-cols-2  md:grid-cols-3 pb-8 lg:grid-cols-4 gap-2 lg:gap-[20px] ">
+    <div className=" px-3 md:px-[4rem] xl:px-[5rem] sm:px-[2rem] grid grid-cols-2  md:grid-cols-3 pb-8 lg:grid-cols-4 gap-2 lg:gap-[20px] ">
       {loading ? (
         <>
           {products.map((product: Product) => (

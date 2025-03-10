@@ -12,7 +12,7 @@ export default function Footer() {
   const categories = useSelector((statu: RootState) => statu.categories);
   return (
     <div className="bg bg-main-primary w-full  text-black  pt-10 pb-20 md:pb-10 ">
-      <div className="flex gap-4 flex-col lg:flex-row lg:justify-between  container">
+      <div className="flex gap-4 flex-col lg:flex-row lg:justify-between  px-3 md:px-[4rem] xl:px-[5rem] sm:px-[2rem]">
         <div>
         <div className="w-[200px] md:w-[250px] h-[50px] ">
             <Image src={logo} alt="logo" width={100} height={100} className="w-[200px] md:w-[250px] bg-cover" unoptimized />

@@ -8,15 +8,15 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-		container: {
-			padding: {
-			DEFAULT: '1rem',
-			sm: '2rem',
-			lg: '4rem',
-			xl: '5rem',
-			'2xl': '6rem',
-			},
-		},
+		// container: {
+		// 	padding: {
+		// 	DEFAULT: '1rem',
+		// 	sm: '2rem',
+		// 	lg: '4rem',
+		// 	xl: '10rem',
+			
+		// 	},
+		// },
   	extend: {
 		fontFamily : {
 			nunito : ['"Nunito", serif;'],

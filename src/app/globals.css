@@ -9,6 +9,10 @@ body {
 @tailwind components;
 @tailwind utilities;
 
+.container {
+  @apply px-3 md:px-[4rem] xl:px-[5rem] sm:px-[2rem]
+}
+
 .custom-checkbox {
   /* -webkit-appearance: none;
   -moz-appearance: none; */
@@ -23,6 +27,8 @@ body {
   transition: all .3s ease-in-out;
   width: 20px;
 }
+
+
 
 .custom-checkbox:checked {
   background-color: #F5CAAB;

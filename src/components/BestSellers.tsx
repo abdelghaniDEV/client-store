@@ -29,7 +29,7 @@ export default function BestSellers() {
   return (
     <div>
       <div className=" pt-10">
-        <div className="flex items-center container justify-between">
+        <div className="flex items-center px-3 md:px-[4rem] xl:px-[5rem] sm:px-[2rem] justify-between">
           <div>
             <TitleHome>Best sellers</TitleHome>
             <p className="tmd:ext-[20px]">

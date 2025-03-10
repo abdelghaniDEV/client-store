@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <div className="relative">
-      <div className="container py-3  ">
+      <div className=" px-3 md:px-[4rem] xl:px-[5rem] sm:px-[2rem] py-3  ">
         <div className="flex items-center justify-between">
           <div className="md:hidden">
             <AlignJustify
