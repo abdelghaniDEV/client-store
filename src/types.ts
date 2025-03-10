@@ -7,7 +7,8 @@ export interface Product {
   size: string[];
   color: string[];
   images: string[];
-  ShortDescription?: string;
+  shortDescription?: string;
+  discount?: number;
   stock: number;
   categories: Category[]; // Store category IDs as strings
   ratings?: string[]; // Store rating IDs as strings
@@ -53,7 +54,6 @@ export interface order {
   country: string;
 }
 
-
 export interface submitOrder {
   fullName: string;
   email: string;
@@ -68,7 +68,7 @@ export interface submitOrder {
     totalPrice: number;
     size?: string;
     color?: string;
-  }[]; // ✅ مصفوفة بدلاً من Tuple
+  }[];
   totalItems: number;
   totalPrice: number;
 }

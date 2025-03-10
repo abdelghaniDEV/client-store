@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { getProductById } from "@/actions/actions";
 import ProductConditions from "@/components/ProductConditions";
 import ProductDescription from "@/components/ProductDescription";
@@ -24,7 +24,7 @@ export default function ProductDetails() {
       try {
         const productTarget = await getProductById(id);
         setProduct(productTarget.product);
-        console.log(productTarget);
+        console.log("product Target", productTarget);
       } catch (err) {
         console.error(err);
       }
@@ -33,11 +33,14 @@ export default function ProductDetails() {
   }, [id]);
 
   const checkAvariableStock = () => {
-    
     if (product?.stock === undefined) {
-      return <span className="text-[16px] text-[#9e9e9e] font-[400]">Stock data not available</span>;
+      return (
+        <span className="text-[16px] text-[#9e9e9e] font-[400]">
+          Stock data not available
+        </span>
+      );
     }
-  
+
     if (product?.stock === 0) {
       return (
         <span className="text-[16px] text-[#f44336] font-[400]">
@@ -54,7 +57,6 @@ export default function ProductDetails() {
       );
     }
   };
-  
 
   const handelShowSection = () => {
     if (showSection === "description") {
@@ -110,18 +112,29 @@ export default function ProductDetails() {
               </h1>
               <div className="flex items-center gap-3">
                 <h4 className="text-[35px] font-[600]">${product?.price}</h4>
-                <span className="text-[#a0a0a0]  text-[20px] line-through font-[600]">
-                  $100.99
-                </span>
-                <span className="text-white bg-red-500 px-2 py-[2px] rounded-[20px]">
-                  -25px
-                </span>
+                {product?.discount && (
+                  <span className="text-[#a0a0a0]  text-[20px] line-through font-[600]">
+                    {product?.discount}
+                  </span>
+                )}
+                {product?.discount && (
+                  <span className="text-white bg-red-500 px-2 py-[2px] rounded-[20px]">
+                    -
+                    {(
+                      (100 * (product.discount - product.price)) /
+                      product.discount
+                    ).toFixed(0)}
+                    %
+                  </span>
+                )}
               </div>
-              <p className="text-[18px] leading-[22px] text-[#4d4e4f]">
-                The garments labelled as Committed are products that have been
-                produced using sustainable fibres or processes, reducing their
-                environmental impact.
-              </p>
+              {product?.shortDescription && (
+                <p className="text-[18px] leading-[22px] text-[#4d4e4f]">
+                  The garments labelled as Committed are products that have been
+                  produced using sustainable fibres or processes, reducing their
+                  environmental impact.
+                </p>
+              )}
             </div>
             {product && <ProductVariant product={product} />}
             <ProductConditions />
@@ -172,7 +185,9 @@ export default function ProductDetails() {
         </div>
         {handelShowSection()}
       </div>
-       {product?.categories[0] && <RalatedProducts categories={product?.categories[0]} />}
+      {product?.categories[0] && (
+        <RalatedProducts categories={product?.categories[0]} />
+      )}
     </div>
   );
 }

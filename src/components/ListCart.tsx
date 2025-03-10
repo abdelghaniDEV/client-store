@@ -21,6 +21,8 @@ type listCartProps = {
 
 export default function ListCart({ cart }: listCartProps) {
   const dispatch = useDispatch<AppDispatch>();
+
+  
   return (
     <div className="flex flex-col gap-3 py-4 h-auto min-h-[90%]">
       {cart.map((item: CartItem) => (
@@ -63,7 +65,7 @@ export default function ListCart({ cart }: listCartProps) {
                 </div>
               )}
             </div>
-            <div className="flex mt-1 items-center justify-between ">
+            <div className="flex mt-1 items-center justify-between">
               <div className="flex  items-center gap-2 border-[1px]">
                 <div
                   onClick={() => dispatch(incrementItem(item.id))}

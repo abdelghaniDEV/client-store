@@ -25,7 +25,7 @@ export default function ProductCart({ product }: productCartProps) {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [openCart, setOpenCart] = useState<boolean>(false);
   const [loading, setLoading] = useState(true);
-    const { toast } = useToast();
+  const { toast } = useToast();
 
   const wishlist = useSelector((statu: RootState) => statu.wishlist.items);
   const isInWishlist = wishlist.some((item) => item._id === product._id);
@@ -77,10 +77,20 @@ export default function ProductCart({ product }: productCartProps) {
           />
         </div>
 
-        <Heart onClick={handelAddedWishlist} className={`absolute top-2 right-2 p-1 ${isInWishlist ? "bg-red-500 text-white" : "bg-main-primary"} rounded-full h-7 w-7 cursor-pointer md:hidden`} />
-        {/* <div className="bg-red-500 text-white absolute top-2 left-2 py-1 px-3 rounded-[20px]">
-          <span>-20%</span>
-        </div> */}
+        <Heart
+          onClick={handelAddedWishlist}
+          className={`absolute top-2 right-2 p-1 ${
+            isInWishlist ? "bg-red-500 text-white" : "bg-main-primary"
+          } rounded-full h-7 w-7 cursor-pointer md:hidden`}
+        />
+        {product.discount && (
+          <div className="bg-red-500 text-white absolute top-2 left-2 py-1 px-3 rounded-[20px]">
+            <span>
+              
+              -{((100 * (product.discount - product.price)) / product.discount).toFixed(0)}%
+            </span>
+          </div>
+        )}
         <AnimatePresence>
           {isHovered && (
             <div className="hidden md:block">

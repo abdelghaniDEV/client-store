@@ -13,7 +13,7 @@ export default function ProductCartDetails({product} : productCartProps) {
     <h2 className="text-[15px] md:text-[18px] leading-[20px]">{product.name}</h2>
     <div className="flex items-center gap-3">
       <p className="font-[500]">${product.price}</p>
-      <p className="font-[500] line-through text-red-500">$180.65</p>
+      {product.discount && <p className="font-[500] line-through text-red-500">{product.discount}</p>}
     </div>
   </Link>
   )
